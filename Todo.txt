@@ -1,0 +1,23 @@
+
+
+
+
+
+
+【工作】
+    NOW：
+    FUTURE：
+        背景的特效製作
+        側邊欄
+
+
+【文件】
+    HTML:
+        後台：修改一項寫在一份
+    JS：
+        people, sidebar, Menu
+    CSS：
+        跟 html 分法一樣
+
+
+    

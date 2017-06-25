@@ -1,0 +1,95 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+$bottom_url: url('../img/bg_pic.png');
+$cover_url: url('../img/bg_cover.png');
+$color_green: #5fb8a4;
+$color_orange: #ed9027;
+$opacity_hover: 0.7;
+$opacity_active: 0.4;
+$trans_fast: 0.2s;
+$trans_mid: 0.5s;
+$trans_slow: 1s;
+
+#footer {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    z-index: 200;
+    .footer_top {
+        &:before {
+            position: relative;
+            margin: auto;
+            left: 0;
+            right: 0;
+            content: "";
+            display: block;
+            height: 6px;
+            width: 300px;
+            background: $color_orange;
+            transition: width $trans_fast;
+        }
+    }
+    .footer_center {
+        position: relative;
+        display: flex;
+        height: 50vh;
+        width: 70vw;
+        left: 17.5vw;
+        overflow: hidden;
+        flex-direction: row;
+        justify-content: center;
+        .footer_element {
+            position: relative;
+            width: 11%;
+            top: 0px;
+            margin-top: 70px;
+            transition: opacity $trans_mid, width $trans_mid, top $trans_mid ;
+            .element_title {
+                position: relative;
+                color: $color_orange;
+                left: -1px;
+                font-size: 16px;
+                line-height: 70px;
+                font-weight: 500;
+            }
+            .element_cont {
+                display: block;
+                cursor: pointer;
+                font-size: 12px;
+                line-height: 25px;
+                color: rgba(255,255,255,0.8);
+                transition: opacity $trans_fast;
+                &:hover {
+                    opacity: $opacity_hover;
+                }
+                &:active {
+                    opacity: $opacity_active;
+                }
+            }
+        }
+        #footer_logo {
+            margin-top: 90px;
+            width: 23%;
+        }
+    }
+    .footer_bottom {
+        width: 100%;
+        text-align: center;
+        img {
+            cursor: pointer;
+            transition: opacity $trans_fast;
+            &:hover {
+                opacity: $opacity_hover;
+            }
+            &:active {
+                opacity: $opacity_active;
+            }
+        }
+        .copyright {
+            font-size: 10px;
+            line-height: 40px;
+            font-weight: 600;
+        }
+    }
+}

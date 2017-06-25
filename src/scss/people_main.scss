@@ -1,0 +1,216 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+$bottom_url: url('../img/bg_pic.png');
+$cover_url: url('../img/bg_cover.png');
+$color_green: #5fb8a4;
+$color_orange: #ed9027;
+$opacity_hover: 0.7;
+$opacity_active: 0.4;
+$trans_fast: 0.2s;
+$trans_mid: 0.5s;
+$trans_slow: 1s;
+
+body::-webkit-scrollbar {
+    width: 1em;
+}
+ 
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+#intro_left {
+    position: absolute;
+    left: 20vw;
+    top: 20vh;
+    width: 16vw;
+    p {
+        line-height: 30px;
+        font-size: 14px;
+        font-weight: 100;
+        letter-spacing: 3px;
+    }
+    .space {
+        height: 14vh;
+    }
+    #you_can {
+        float: left;
+        margin-right: 15px;
+    }
+    #search {
+        position: relative;
+        z-index: 20;
+        float: left;
+        background: url("../img/search.png");
+        height: 18px;
+        width: 82px;
+        text-decoration: none;
+        &:hover {
+            background: url("../img/search_on.png");
+        }
+        &:active {
+            opacity: $opacity_active;
+        }
+    }
+}
+
+.main_round_pic {
+    position: absolute;
+    left: 48vw;
+    top: 20vh;
+    width: 40vw;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.hide_scrollbar {
+    position: relative;
+    z-index: 100;
+    width: 62vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#view_left {
+    position: absolute;
+    z-index: 100;
+    left: 15vw;
+    top: 10vh;
+    width: 48vw;
+    height: 80vh;
+    overflow: scroll;
+    .people_left {
+        position: relative;
+        width: 11vw;
+        margin: 15px 10px;
+        .people_pic {
+            position: relative;
+            width: 100%;
+            transition: brightness $trans_mid;
+        }
+        .people_more {
+            position: absolute;
+            z-index: 20;
+            left: 0;
+            right: 0;
+            bottom: 26px;
+            margin: auto;
+            width: 20px;
+            opacity: 0;
+            transition: bottom $trans_mid, width $trans_mid, opacity $trans_slow;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+        &:active {
+            .people_pic {
+                opacity: $opacity_active;
+            }
+        }
+    }
+    .row {
+        position: absolute;
+        width: 13vw;
+    }
+    #row_1 {
+        left: 0vw;
+        top: 8vh;
+    }
+    #row_2 {
+        left: 12.5vw;
+        top: 0vh;
+    }
+    #row_3 {
+        left: 25vw;
+        top: 15vh;
+    }
+}
+
+#view_upper_right {
+    position: absolute;
+    z-index: 100;
+    left: 56vw;
+    top: 20vh;
+    margin-left: 20px;
+} 
+
+#view_right {
+    position: absolute;
+    z-index: 100;
+    left: 62vw;
+    top: 26vh;
+    width: 28vw;
+    height: 60vh;
+    overflow: scroll;
+    .people_info {
+        display: inline-block;
+        margin: 22px;
+        cursor: pointer;
+        .name {
+            font-size: 18px;
+            font-weight: 900;
+            line-height: 20px;
+        }
+        .major {
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 18px;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            color: $color_orange;
+        }
+        .skill {
+            font-size: 11px;
+            font-weight: 900;
+            line-height: 10px;
+            line-height: 14px;
+        }
+        .after {
+            position: relative;
+            top: 15px;
+            left: 1px;
+            content: "";
+            display: block;
+            height: 2px;
+            width: 0px;
+            background: $color_orange;
+            transition: width $trans_fast;
+        }
+        &:active {
+            opacity: $opacity_active;
+        }
+    }
+}
+
+.upper_tag {
+    position: relative;
+    float: left;
+    font-size: 14px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    line-height: 28px;
+    &:after {
+        position: absolute;
+        top: 14px;
+        right: -30px;
+        content: "";
+        display: block;
+        height: 1px;
+        width: 20px;
+        background: $color_orange;
+    }
+    &.last {
+        position: relative;
+        background: rgba(0,0,0,0.2);
+        padding: 0px 6px;
+        margin-left: 35px;
+        &:after {
+            opacity: 0;
+        }
+    }
+}
