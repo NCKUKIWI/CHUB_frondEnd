@@ -204,11 +204,11 @@ body::-webkit-scrollbar-thumb {
     cursor: pointer; }
     #preview_control .list_go:active {
       opacity: 0.4; }
-  #preview_control #go_prev {
-    background-image: url("../img/go_prev.png"); }
-    #preview_control #go_prev:hover {
-      background-image: url("../img/go_prev_active.png"); }
-  #preview_control #go_next {
-    background-image: url("../img/go_next.png"); }
-    #preview_control #go_next:hover {
-      background-image: url("../img/go_next_active.png"); }
+  #preview_control #go_up {
+    background-image: url("../img/go_up.png"); }
+    #preview_control #go_up:hover {
+      background-image: url("../img/go_up_active.png"); }
+  #preview_control #go_down {
+    background-image: url("../img/go_down.png"); }
+    #preview_control #go_down:hover {
+      background-image: url("../img/go_down_active.png"); }

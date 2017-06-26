@@ -256,16 +256,16 @@ body::-webkit-scrollbar-thumb {
             opacity: $opacity_active;
         }
     }
-    #go_prev {
-        background-image: url('../img/go_prev.png');
+    #go_up {
+        background-image: url('../img/go_up.png');
         &:hover {
-            background-image: url('../img/go_prev_active.png');
+            background-image: url('../img/go_up_active.png');
         }
     }
-    #go_next {
-        background-image: url('../img/go_next.png');
+    #go_down {
+        background-image: url('../img/go_down.png');
         &:hover {
-            background-image: url('../img/go_next_active.png');
+            background-image: url('../img/go_down_active.png');
         }
     }
 }
