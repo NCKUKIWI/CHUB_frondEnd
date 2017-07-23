@@ -5,6 +5,8 @@ $bottom_url: url('../img/bg_pic.png');
 $cover_url: url('../img/bg_cover.png');
 $color_green: #5fb8a4;
 $color_orange: #ed9027;
+$color_dark: #4d4d4d;
+$color_light: #666666;
 $opacity_hover: 0.7;
 $opacity_active: 0.4;
 $trans_fast: 0.2s;
@@ -22,20 +24,20 @@ $trans_slow: 1s;
         margin: 18px 0px;
         cursor: pointer;
         img {
-            width: 20px;
-            opacity: $opacity_hover;
+            width: 23px;
+            opacity: $opacity_active;
             transition: opacity $trans_fast;
         }
         &:after {
             position: relative;
-            top: 8px;
+            top: 9px;
             right: 1px;
             content: "";
             display: block;
             height: 2px;
             width: 60px;
             background: $color_orange;
-            transition: right $trans_fast;
+            transition: right $trans_mid;
         }
         &:hover {
             img {
@@ -46,9 +48,689 @@ $trans_slow: 1s;
             img {
                 opacity: $opacity_active;
             }
+        }
+        &.active {
+            img {
+                opacity: 1;
+            }
             &:after {
-                right: 51px;
+                right: 34px;
+            }
+            &:active {
+                img {
+                    opacity: $opacity_active;
+                }
+                &:after {
+                    right: 34px;
+                }
             }
         }
     }
 }
+
+.sidebar_cont {
+    position: absolute;
+    z-index: 90;
+    width: 320px;
+    height: 84vh;
+    right: 60px;
+    top: 8vh;
+    border-radius: 40px;
+    background: $color_dark;
+    opacity: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    transition: right $trans_mid, opacity $trans_slow, width $trans_mid;
+    &.widewidth {
+        width: 650px;
+    }
+    .sidebar_upper {
+        position: absolute;
+        overflow: hidden;
+        width: 100%;
+        height: 220px;
+        background: $color_light;
+        z-index: 10;
+        #sidebar_chub_logo {
+            position: absolute;
+            background: url("../img/chub_logo.png") no-repeat;
+            height: 70px;
+            width: 50px;
+            margin: auto;
+            left: 0;
+            right: 0;
+            margin-top: 40px;
+            text-decoration: none;
+            cursor: default;
+        }
+        .sidebar_btn {
+            position: relative;
+            float: left;
+            display: block;
+            height: 50px;
+            top: 160px;
+            opacity: 0.5;
+            cursor: pointer;
+            z-index: 10;
+            &.full {
+                width: 100%;
+                color: $color_orange;
+                opacity: 1;
+                cursor: default;
+                &:after {
+                    width: 20px;
+                }
+            }
+            &.half {
+                width: 50%;
+            }
+            &.third {
+                width: 33.3%;
+            }
+            p {
+                text-align: center;
+                letter-spacing: 1px;
+            }
+            &:after {
+                position: absolute;
+                content: "";
+                display: block;
+                margin: auto;
+                left: 0;
+                right: 0;
+                height: 2px;
+                width: 0px;
+                background: $color_orange;
+                transition: width $trans_mid;
+            }
+            &.active {
+                opacity: 1;
+                cursor: default;
+                &:after {
+                    width: 20px;
+                }
+            }
+        }
+        .triangle {
+            position: absolute;
+            display: block;
+            margin: auto;
+            left: 20%;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 15px 18px 15px;
+            border-color: transparent transparent $color_dark transparent;
+            transition: left $trans_mid ease-out;
+        }
+    }
+    .sidebar_upper_filled {
+        position: relative;
+        width: 100%;
+        height: 220px;
+    }
+}
+
+.big_input {
+    position: relative;
+    background: transparent;
+    border-width: 0px 0px 1px 0px;
+    border-color: rgba(255,255,255,0.3);
+    width: 80%;
+    left: 10%;
+    top: 55px;
+    margin-top: 15px;
+    line-height: 40px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 100;
+    letter-spacing: 1px;
+    color: white;
+    transition: border-color $trans_mid;
+    &::-webkit-input-placeholder {
+        position: relative;
+        color: white;
+        transition: color $trans_mid;
+    }
+    &::-moz-placeholder {
+        color: white;
+        transition: color $trans_mid;
+    }
+    &:-ms-input-placeholder {
+        color: white;
+        transition: color $trans_mid;
+    }
+    &:-moz-placeholder {
+        color: white;
+        transition: color $trans_mid;
+    }
+    &:focus {
+        outline: none;
+        border-color: rgba(255,255,255,1);
+        &::-webkit-input-placeholder {
+            color: transparent;
+        }
+        &::-moz-placeholder {
+            color: transparent;
+        }
+        &:-ms-input-placeholder {
+            color: transparent;
+        }
+        &:-moz-placeholder {
+            color: transparent;
+        }
+    }
+}
+
+.mid_input {
+    position: relative;
+    background: transparent;
+    border-width: 0px 0px 1px 0px;
+    border-color: rgba(255,255,255,0.3);
+    width: 60%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 20px;
+    line-height: 40px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 100;
+    letter-spacing: 1px;
+    color: white;
+    transition: border-color $trans_mid;
+    &::-webkit-input-placeholder {
+        position: relative;
+        color: white;
+        transition: color $trans_mid;
+    }
+    &::-moz-placeholder {
+        color: white;
+        transition: color $trans_mid;
+    }
+    &:-ms-input-placeholder {
+        color: white;
+        transition: color $trans_mid;
+    }
+    &:-moz-placeholder {
+        color: white;
+        transition: color $trans_mid;
+    }
+    &:focus {
+        outline: none;
+        border-color: rgba(255,255,255,1);
+        &::-webkit-input-placeholder {
+            color: transparent;
+        }
+        &::-moz-placeholder {
+            color: transparent;
+        }
+        &:-ms-input-placeholder {
+            color: transparent;
+        }
+        &:-moz-placeholder {
+            color: transparent;
+        }
+    }
+}
+
+.small_input {
+    position: relative;
+    background: transparent;
+    border-width: 0px;
+    background: $color_light;
+    width: 67%;
+    height: 35px;
+    left: 14%;
+    padding-left: 5%;
+    margin-top: 50px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: white;
+    &::-webkit-input-placeholder {
+        position: relative;
+        color: white;
+        transition: color $trans_mid;
+    }
+    &::-moz-placeholder {
+        color: white;
+        transition: color $trans_mid;
+    }
+    &:-ms-input-placeholder {
+        color: white;
+        transition: color $trans_mid;
+    }
+    &:-moz-placeholder {
+        color: white;
+        transition: color $trans_mid;
+    }
+    &:focus {
+        outline: none;
+        opacity: $opacity_hover;
+        &::-webkit-input-placeholder {
+            color: transparent;
+        }
+        &::-moz-placeholder {
+            color: transparent;
+        }
+        &:-ms-input-placeholder {
+            color: transparent;
+        }
+        &:-moz-placeholder {
+            color: transparent;
+        }
+    }
+    &:hover {
+        opacity: $opacity_hover;
+    }
+}
+
+.side_btn {
+    position: relative;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 190px;
+    padding: 13px 0px;
+    text-align: center;
+    border-radius: 16px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: white 1px solid;
+    transition: background $trans_fast, border-color $trans_fast, opacity $trans_fast ;
+    &.tiny {
+        width: auto;
+        padding: 6px 10px;
+        font-size: 12px;
+        border-radius: 8px;
+        display: inline-block;
+        margin: 2px;
+    }
+    &.black {
+        position: relative;
+        border-color: transparent;
+        background: rgba(0,0,0,0.6);
+        &:hover {
+            background: rgba(0,0,0,0.9);
+        }
+    }
+    &:hover {
+        background: rgba(255,255,255,0.3);
+        border-color: transparent;
+    }
+    &:active {
+        opacity: $opacity_active;
+    }
+}
+
+.side_goto_bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding-bottom: 80px;
+}
+
+#dont_have_account {
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 40px;
+    cursor: pointer;
+    transition: color $trans_fast;
+    &:hover {
+        color: $color_orange;
+    }
+    &:active {
+        opacity: $opacity_active;
+    }
+}
+
+#side_cont_signup {
+    input {
+        top: 35px;
+        line-height: 30px;
+    }
+    .side_goto_bottom {
+        padding-bottom: 65px;
+    }
+}
+
+.side_cont_page {
+    position: absolute;
+    width: 100%;
+    height: 480px;
+}
+
+.dropdown {
+    position: relative;
+    margin-bottom: 40px;
+    .dropdown-content {
+        position: relative;
+        display: block;
+        z-index: 1;
+        .default {
+            color: rgba(255, 255, 255, 1);
+            height: 35px;
+            margin: 10px auto 0px auto;
+            cursor: pointer;
+            background-image: url("../img/go_down_btn.png");
+            background-repeat: no-repeat;
+            background-position-x: 95%;
+            background-position-y: center;
+            &:hover {
+                opacity: $opacity_hover;
+            }
+        }
+        .hidden {
+            display: none;
+        }
+        a {
+            position: relative;
+            display: block;
+            background: $color_light;
+            color: rgba(255, 255, 255, 0);
+            height: 0px;
+            width: 67%;
+            margin: auto;
+            padding-left: 5%;
+            font-size: 14px;
+            text-decoration: none;
+            line-height: 35px;
+            border: none;
+            cursor: default;
+            transition: height $trans_mid, color $trans_fast;
+            &:active {
+                color: rgba(237, 144, 38, 0.7);
+            }
+        }
+        &:after {
+            position: relative;
+            content: "";
+            display: block;
+            margin: auto;
+            left: 0;
+            right: 0;
+            bottom: 0px;
+            height: 5px;
+            width: 72%;
+            opacity: 0;
+            background: $color_light;
+            transition: opacity $trans_fast;
+        }
+        &.opened {
+            .default {
+                background-image: url("../img/go_down_btn_on.png");
+            }
+            a {
+                color: rgba(255, 255, 255, 1);
+                height: 35px;
+                cursor: pointer;
+                &:hover {
+                    color: $color_orange;
+                    opacity: $opacity_hover;
+                }
+            }
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.tiny_bottons {
+    margin-top: 45px;
+    margin-right: 35px;
+    float: right;
+}
+
+#side_profile_left {
+    position: absolute;
+    margin-top: 4vh;
+    margin-left: 40px;
+    width: 200px;
+    height: 54vh;
+    border-style: solid;
+    border-width: 0px 1px 0px 0px;
+    border-color: rgba(255,255,255,0.3);
+    img {
+        width: 100px;
+        margin: 1vh 0 1vh 0;
+    }
+    .side_name {
+        font-size: 22px;
+    }
+    .side_sub_name {
+        position: relative;
+        font-size: 20px;
+        letter-spacing: 4px;
+        left: 2px;
+        color: $color_orange;
+    }
+    #side_detail_text {
+        position: relative;
+        margin-top: 5vh;
+        .left_title {
+            font-size: 16px;
+            font-style: italic;
+            display: inline-block;
+            line-height: 4vh;
+            letter-spacing: 2px;
+            &.with_space {
+                position: relative;
+                line-height: 55px;
+            }
+        }
+        span {
+            color: $color_orange;
+            margin: 0px 4px;
+        }
+        .left_cont {
+            position: relative;
+            display: block;
+            line-height: 20px;
+            top: -1vh;
+            left: 1px;
+            color: $color_orange;
+        }
+    }
+}
+
+#side_profile_right {
+    position: absolute;
+    left: 282px;
+    margin-top: 14.5vh;
+    height: 44vh;
+    .right_title {
+        font-size: 16px;
+        font-style: italic;
+        display: inline-block;
+        line-height: 8vh;
+        letter-spacing: 2px;
+    }
+    span {
+        color: $color_orange;
+        margin: 0px 4px;
+    }
+    .right_cont {
+        position: relative;
+        display: block;
+        top: -1.5vh;
+        left: 1px;
+        line-height: 24px;
+        text-decoration: underline;
+        transition: opacity $trans_fast;
+        &:hover {
+            cursor: pointer;
+            opacity: $opacity_hover;
+        }
+        &:active {
+            opacity: $opacity_active;
+        }
+    }
+}
+
+.side_halfscreen {
+    position: absolute;
+    z-index: 80;
+    width: 1000px;
+    height: 100vh;
+    background: rgb(40,40,40);
+    opacity: 0.95;
+    right: -1000px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    transition: right $trans_mid;
+    #halfscreen_left {
+        position: absolute;
+        margin-top: 10vh;
+        width: 380px;
+        height: 80vh;
+        text-align: center;
+        border-style: solid;
+        border-width: 0px 2px 0px 0px;
+        border-color: rgba(255,255,255,0.3);
+        #personal_profile {
+            position: relative;
+            line-height: 80px;
+            font-size: 24px;
+        }
+        img {
+            margin-top: 3vh;
+            margin-bottom: 5vh;
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgba(255,255,255,0.3);
+            border-radius: 25px;
+        }
+        .side_btn {
+            top: 12vh;
+        }
+    }
+    #halfscreen_right {
+        position: absolute;
+        text-align: center;
+        left: 380px;
+        margin-top: 10vh;
+        height: 80vh;
+        width: 560px;
+        .mid_input {
+            text-align: left;
+        }
+        #description_text {
+            position: relative;
+            text-align: left;
+            left: 115px;
+            line-height: 40px;
+            font-size: 16px;
+            letter-spacing: 1px;
+            margin-top: 3vh;
+        }
+        #description_input {
+            position: relative;
+            display: block;
+            margin: auto;
+            background: transparent;
+            border-width: 1px;
+            border-radius: 20px;
+            border-color: rgba(255,255,255,0.3);
+            width: 54%;
+            height: 12vh;
+            padding: 3%;
+            font-size: 14px;
+            letter-spacing: 1px;
+            color: white;
+            transition: border-color $trans_mid;
+            &::-webkit-input-placeholder {
+                position: relative;
+                color: white;
+                transition: color $trans_mid;
+            }
+            &::-moz-placeholder {
+                color: white;
+                transition: color $trans_mid;
+            }
+            &:-ms-input-placeholder {
+                color: white;
+                transition: color $trans_mid;
+            }
+            &:-moz-placeholder {
+                color: white;
+                transition: color $trans_mid;
+            }
+            &:focus {
+                outline: none;
+                border-color: rgba(255,255,255,1);
+                &::-webkit-input-placeholder {
+                    color: transparent;
+                }
+                &::-moz-placeholder {
+                    color: transparent;
+                }
+                &:-ms-input-placeholder {
+                    color: transparent;
+                }
+                &:-moz-placeholder {
+                    color: transparent;
+                }
+            }
+        }
+        #portfolio_upload {
+            position: relative;
+            display: block;
+            text-align: left;
+            left: 115px;
+            margin-top: 2vh;
+            #halfscreen_port_title {
+                position: relative;
+                display: inline-block;
+                font-size: 16px;
+                letter-spacing: 1px;
+            }
+            span {
+                position: relative;
+                display: inline-block;
+                color: $color_orange;
+                margin: 0px 6px 0px 0px;
+            }
+            .halfscreen_port {
+                position: relative;
+                font-size: 12px;
+                top: -2px;
+                left: 3px;
+                margin: 0px 2px;
+                letter-spacing: 1px;
+                text-decoration: underline;
+                cursor: pointer;
+                transition: opacity $trans_fast;
+                &:hover {
+                    opacity: $opacity_hover;
+                }
+                &:active {
+                    opacity: $opacity_active;
+                }
+                &.upload {
+                    position: relative;
+                    display: inline-block;
+                    top: -2px;
+                    color: $color_orange;
+                    background: rgba(0,0,0,0.3);
+                    text-decoration: none;
+                    padding: 4px 5px;
+                    margin-left: 4px;
+                    &:hover {
+                        color: white;
+                        background: $color_orange;
+                        opacity: 1;
+                    }
+                    &:active {
+                        opacity: $opacity_active;
+                    }
+                }
+            }
+        }
+    }
+}
+    

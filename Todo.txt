@@ -3,15 +3,21 @@
 
 
 
+// 改 Project/godown的名字
 
 【工作】
     NOW：
-        側邊欄製作（Group.ai）
-        Menu 只釘在第一頁主視覺區
+        側邊欄製作（Sidebar.ai）
+        sidebar 上下部滾動會跑掉 - 把 project 不斷增加之後即會看到
+        Menu 只釘在第一頁主視覺區，往下移之後會消失
         People 左邊右邊都會跑版
+        主頁的圓形框框會跑
+        Project 移動變成左右移動
+        Float Window 內外的大小不一
+        Menu 的 projects 改成 project
     FUTURE：
-        背景的特效製作
-        
+        背景（特效製作？不好，建議全部改成靜態的）
+        盡量多加註解
 
 
 【文件】

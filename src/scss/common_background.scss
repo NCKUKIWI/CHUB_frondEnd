@@ -21,6 +21,7 @@ $trans_slow: 1s;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .cover {
     position: absolute;
     width: 100vw;
@@ -39,4 +40,22 @@ $trans_slow: 1s;
     background-image: $project_cover_url;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.sidebar_cover {
+    position: absolute;
+    z-index: 50;
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+    color: transparent;
+}
+
+.halfscreen_cover {
+    position: absolute;
+    z-index: 50;
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+    color: transparent;
 }

@@ -3,17 +3,141 @@
 <!-- style: sidebar.scss -->
 
 <div class="right_sidebar">
-	<div class="side_icon">
-		<img id="side_profile" src="img/side_profile.png">
+	<div class="side_icon" id="side_profile">
+		<img src="img/side_profile.png">
 	</div>
-	<div class="side_icon">
-		<img id="side_message" src="img/side_message.png">
-	</div>
-	<div class="side_icon">
-		<img id="side_search" src="img/side_search.png">
+	<!-- <div class="side_icon" id="side_message">
+		<img src="img/side_message.png">
+	</div> -->
+	<div class="side_icon" id="side_search">
+		<img src="img/side_search.png">
 	</div>
 </div>
 
-<div class="sidebar">
-	<!---->
+<div class="sidebar_cont">
+	<div class="sidebar_upper">
+		<a href="#" id="sidebar_chub_logo">　</a>
+		 <div class="side_menu" id="side_menu_profile_before">
+			<div class="sidebar_btn half profile_before_btn active" id="sidebar_login"><p>Log In</p></div>
+			<div class="sidebar_btn half profile_before_btn" id="sidebar_signup"><p>Sign Up</p></div>
+			<div class="triangle"></div>
+		</div>
+		<div class="side_menu" id="side_menu_profile_after">
+			 <!-- <div class="sidebar_btn third profile_after_btn active" id="sidebar_interested"><p>Interested</p></div> 
+			 <div class="sidebar_btn third profile_after_btn" id="sidebar_profile"><p>My Profile</p></div> 
+			 <div class="sidebar_btn third profile_after_btn" id="sidebar_headsup"><p>Heads-Up</p></div>  -->
+			  <div class="sidebar_btn full profile_after_btn" id="sidebar_profile"><p>My Profile</p></div>  
+			 <!-- <div class="triangle"></div> -->
+		</div> 
+		<div class="side_menu" id="side_menu_search">
+			<div class="sidebar_btn full search_btn" id="sidebar_search"><p>Search</p></div>
+		</div> 
+	</div>
+	<div class="sidebar_upper_filled"></div>
+	<div class="side_cont_page" id="side_cont_login">
+		<input class="big_input" type="text" placeholder="E-mail"></input>
+		<input class="big_input" type="password" placeholder="Password"></input>
+		<div class="side_goto_bottom">
+			<div class="side_btn" id="side_btn_login">Log In</div>
+			<div class="side_btn black" id="side_btn_facebook">Facebook</div>
+			<p id="dont_have_account">Don't have an an Account?</p>
+		</div>
+	</div>
+	<div class="side_cont_page" id="side_cont_signup">
+		<input class="big_input" type="text" placeholder="E-mail"></input>
+		<input class="big_input" type="text" placeholder="Username"></input>
+		<input class="big_input" type="password" placeholder="Password"></input>
+		<input class="big_input" type="password" placeholder="Confirm Password"></input>
+		<div class="side_goto_bottom">
+			<div class="side_btn" id="side_btn_signup">Sign Up</div>
+			<div class="side_btn black" id="side_btn_facebook">Facebook</div>
+			<p>　</p>
+		</div>
+	</div>
+	<div class="side_cont_page" id="side_cont_search">
+		<input class="small_input" type="text" placeholder="在 C-Hub 上搜尋"></input>
+		<div class="dropdown">
+			<div class="dropdown-content" id="dropdown_layer1">
+				<a class="default">All</a>
+				<a class="selectable hidden">All</a>
+				<a class="selectable">Activity</a>
+				<a class="selectable">Group</a>
+				<a class="selectable">Project</a>
+				<a class="selectable">People</a>
+			</div>
+			<div class="dropdown-content" id="dropdown_layer2">
+				<a class="default">List2</a>
+				<a class="selectable hidden">List2</a>
+				<a class="selectable">Option1</a>
+				<a class="selectable">Option2</a>
+				<a class="selectable">Option3</a>
+				<a class="selectable">Option4</a>
+			</div>
+		</div>
+		<div class="side_btn black" id="start_search">Search</div>
+	</div> 
+	 <div class="side_cont_page" id="side_cont_myprofile">
+		<div class="tiny_bottons">
+			<!-- <div class="side_btn tiny" id="side_btn_group">My Group</div>  -->
+			<!-- <div class="side_btn tiny" id="side_btn_edit">Edit Profile</div> -->
+			<div class="side_btn tiny" id="side_btn_logout">Log Out</div>
+		</div>
+		<div id="side_profile_left">
+			<img src="img/people_ex.png">
+			<p class="side_name">Yen Ting Cho</p>
+			<p class="side_sub_name">卓彥廷</p>
+			<div id="side_detail_text">
+				<p class="left_title">School</p><span>/</span><p class="left_cont">成功大學創意產業研究所</p>
+				<p class="left_title">Student ID</p><span>/</span><p class="left_cont">H34026018</p>
+				<p class="left_title">Major</p><span>/</span><p class="left_cont">Media Design</p>
+				<p class="left_title">Skills</p><span>/</span><p class="left_cont">Technology、<br>Design、<br>Architecture</p>
+			</div>
+		</div>
+		<div class="with_scroll" id="side_profile_right">
+			<p class="right_title">Project</p><span>/</span>
+				<a class="right_cont">Project1</a>
+				<a class="right_cont">Project2</a>
+				<a class="right_cont">Project3</a>
+				<a class="right_cont">Project4</a>
+				<a class="right_cont">Project5</a>
+				<a class="right_cont">Project6</a>
+			<p class="right_title">Activity</p><span>/</span>
+				<a class="right_cont">Activity1</a>
+				<a class="right_cont">Activity2</a>
+				<a class="right_cont">Activity3</a>
+				<a class="right_cont">Activity4</a>
+				<a class="right_cont">Activity5</a>
+				<a class="right_cont">Activity6</a>
+		</div>
+	</div>
 </div>
+
+ <div class="side_halfscreen">
+	<div id="halfscreen_left">
+		<p id="personal_profile">【Personal Profile】</p>
+		<img id="edit_profile photo" src="https://unsplash.it/200/250">
+		<input class="mid_input" type="text" placeholder="Username"></input>
+		<input class="mid_input" type="text" placeholder="E-mail"></input>
+		<div class="side_btn" id="side_edit_save">Save</div>
+		<div class="side_btn" id="side_edit_cancel">Cancel</div>
+	</div>
+	<div id="halfscreen_right">
+		<input class="mid_input" type="text" placeholder="School"></input>
+		<input class="mid_input" type="text" placeholder="Student ID"></input>
+		<input class="mid_input" type="text" placeholder="Major"></input>
+		<input class="mid_input" type="text" placeholder="Skill"></input>
+		<input class="mid_input" type="text" placeholder="Recovery Email"></input>
+		<input class="mid_input" type="text" placeholder="Cellphone"></input>
+		<input class="mid_input" type="password" placeholder="Passsword"></input>
+		<input class="mid_input" type="password" placeholder="Confirm Password"></input>
+		<p id="description_text">Personal Content (200 words max)</p>
+		<textarea class="with_scroll" id="description_input"></textarea>
+		<div id="portfolio_upload">
+			<p id="halfscreen_port_title">Portfolio</p>
+			<span>/</span> 
+			<a class="halfscreen_port">Title1</a>
+			<a class="halfscreen_port">Title2</a>
+			<a class="halfscreen_port upload">Upload</a>
+		</div>
+	</div>
+</div> 
