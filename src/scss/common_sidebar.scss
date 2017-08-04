@@ -597,28 +597,6 @@ $trans_slow: 1s;
             line-height: 80px;
             font-size: 24px;
         }
-        .profile_photo {
-            &.big {
-                position: relative;
-                height: 250px;
-                margin-top: 3vh;
-                margin-bottom: 5vh;
-                border-style: solid;
-                border-width: 1px;
-                border-color: rgba(255,255,255,0.3);
-                border-radius: 25px;
-            }
-            &.small {
-                position: relative;
-                height: 200px;
-                margin-top: 1vh;
-                margin-bottom: 3vh;
-                border-style: solid;
-                border-width: 1px;
-                border-color: rgba(255,255,255,0.3);
-                border-radius: 25px;
-            }
-        }
         .side_btn {
             top: 12vh;
         }
@@ -1115,5 +1093,167 @@ $trans_slow: 1s;
     }
     &:active {
         opacity: $opacity_active;
+    }
+}
+
+#side_cont_headsup {
+    .a_notification {
+        position: relative;
+        display: block;
+        width: 100%;
+        top: 10px;
+        height: 110px;
+        .profile_photo {
+            position: absolute;
+            margin-left: 40px;
+            margin-top: 15px;
+        }
+        .notification_main {
+            position: absolute;
+            margin-left: 155px;
+            margin-top: 25px;
+            display: inline;
+            letter-spacing: 1px;
+        }
+        .strange_icon {
+            position: absolute;
+            margin-left: 155px;
+            margin-top: 60px;
+            left: 1px;
+            background: url("../img/strange_icon.png");
+            height: 17px;
+            width: 16px;
+            text-decoration: none;
+        }
+        .notification_time {
+            position: absolute;
+            margin-left: 180px;
+            margin-top: 54px;
+            font-size: 12px;
+            opacity: $opacity_hover;
+            font-weight: 600;
+            display: inline;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+.profile_photo {
+    &.big {
+        position: relative;
+        height: 250px;
+        margin-top: 3vh;
+        margin-bottom: 5vh;
+        border-style: solid;
+        border-width: 1px;
+        border-color: rgba(255,255,255,0.3);
+        border-radius: 25px;
+    }
+    &.small {
+        position: relative;
+        height: 200px;
+        margin-top: 1vh;
+        margin-bottom: 3vh;
+        border-style: solid;
+        border-width: 1px;
+        border-color: rgba(255,255,255,0.3);
+        border-radius: 25px;
+    }
+    &.tiny {
+        position: relative;
+        height: 80px;
+        margin-top: 1vh;
+        margin-bottom: 3vh;
+        border-style: solid;
+        border-width: 1px;
+        border-color: rgba(255,255,255,0.3);
+    }
+}
+
+.horizontal_line {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 1px;
+    width: 90%;
+    left: 5%;
+    background: rgba(255,255,255,0.3);
+}
+
+.view_more {
+    position: relative;
+    font-size: 12px;
+    display: block;
+    text-align: center;
+    width: 60px;
+    margin: auto;
+    top: 35px;
+    letter-spacing: 1px;
+    padding: 4px 5px;
+    background: rgba(0,0,0,0.5);
+    color: $color_orange;
+    text-decoration: none; 
+    cursor: pointer;
+    border-radius: 10px;
+    transition: opacity $trans_fast, background $trans_fast, color $trans_fast;
+    &:hover {
+        color: black;
+        background: $color_orange;
+    }
+    &:active {
+        opacity: $opacity_active;
+    }
+    &:after {
+        position: absolute;
+        margin-top: 15px;
+        right: 1px;
+        content: "";
+        display: block;
+        height: 10px;
+        width: 10px;
+        background: transparent;
+        transition: right $trans_mid;
+    }
+}
+
+#side_cont_interested {
+    top: 250px;
+    width: 100%;
+    // background: yellow;
+    .right_title {
+        margin-left: 80px;
+        font-size: 16px;
+        font-style: italic;
+        display: inline-block;
+        line-height: 8vh;
+        letter-spacing: 2px;
+    }
+    span {
+        color: $color_orange;
+        margin: 0px 4px;
+    }
+    .right_cont {
+        position: relative;
+        margin-left: 80px;
+        display: block;
+        top: -1.5vh;
+        left: 40px;
+        line-height: 24px;
+        text-decoration: underline;
+        transition: opacity $trans_fast;
+        &:hover {
+            cursor: pointer;
+            opacity: $opacity_hover;
+        }
+        &:active {
+            opacity: $opacity_active;
+        }
+    }
+    .horizontal_line {
+        position: relative;
+        left: 10%;
+        margin-top: 20px;
+        width: 80%;
     }
 }

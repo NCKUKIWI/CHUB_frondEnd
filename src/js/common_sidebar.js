@@ -217,69 +217,81 @@ $(document).ready(function(){
     }
 
     function signUp() {
-        $( "#sidebar_signup" ).addClass("active");
-        $( "#sidebar_login" ).removeClass("active");
-        $( ".side_menu" ).hide();
-        $( "#side_menu_profile_before" ).show();
-        $( ".side_cont_page" ).fadeOut(200);
-        $( "#side_cont_signup" ).fadeIn(800);
-        $( ".triangle" ).css({'left':'70%'});
-        now_page = "sign_up";
+        if (now_page != "sign_up") {
+            $( "#sidebar_signup" ).addClass("active");
+            $( "#sidebar_login" ).removeClass("active");
+            $( ".side_menu" ).hide();
+            $( "#side_menu_profile_before" ).show();
+            $( ".side_cont_page" ).fadeOut(200);
+            $( "#side_cont_signup" ).fadeIn(800);
+            $( ".triangle" ).css({'left':'70%'});
+            now_page = "sign_up";
+        }
     }
 
     function logIn() {
-        $( "#sidebar_login" ).addClass("active");
-        $( "#sidebar_signup" ).removeClass("active");
-        $( ".side_menu" ).hide();
-        $( "#side_menu_profile_before" ).show();
-        $( ".side_cont_page" ).fadeOut(200);
-        $( "#side_cont_login" ).fadeIn(800);
-        $( ".triangle" ).css({'left':'20%'});
-        now_page = "log_in";
+        if (now_page != "log_in") {
+            $( "#sidebar_login" ).addClass("active");
+            $( "#sidebar_signup" ).removeClass("active");
+            $( ".side_menu" ).hide();
+            $( "#side_menu_profile_before" ).show();
+            $( ".side_cont_page" ).fadeOut(200);
+            $( "#side_cont_login" ).fadeIn(800);
+            $( ".triangle" ).css({'left':'20%'});
+            now_page = "log_in";
+        }
     }
 
     function interested() {
-        $( "#sidebar_interested" ).addClass("active");
-        $( "#sidebar_headsup" ).removeClass("active");
-        $( "#sidebar_profile" ).removeClass("active");
-        $( ".side_menu" ).hide();
-        $( "#side_menu_profile_after" ).show();
-        $( ".side_cont_page" ).fadeOut(200);
-        $( "#side_cont_interested" ).fadeIn(800);
-        $( ".triangle" ).css({'left':'14%'});
-        now_page = "interested";
+        if (now_page != "interested") {
+            $( "#sidebar_interested" ).addClass("active");
+            $( "#sidebar_headsup" ).removeClass("active");
+            $( "#sidebar_profile" ).removeClass("active");
+            $( ".side_menu" ).hide();
+            $( "#side_menu_profile_after" ).show();
+            $( ".side_cont_page" ).fadeOut(200);
+            $( "#side_cont_interested" ).fadeIn(800);
+            $( ".triangle" ).css({'left':'14%'});
+            now_page = "interested";
+        }
     }
 
     function myProfile() {
-        $( "#sidebar_profile" ).addClass("active");
-        $( "#sidebar_headsup" ).removeClass("active");
-        $( "#sidebar_interested" ).removeClass("active");
-        $( ".side_menu" ).hide();
-        $( "#side_menu_profile_after" ).show();
-        $( ".side_cont_page" ).fadeOut(200);
-        $( "#side_cont_myprofile" ).fadeIn(800);
-        $( ".triangle" ).css({'left':'47.5%'});
-        now_page = "my_profile";
+        if (now_page != "my_profile") {
+            $( "#sidebar_profile" ).addClass("active");
+            $( "#sidebar_headsup" ).removeClass("active");
+            $( "#sidebar_interested" ).removeClass("active");
+            $( ".side_menu" ).hide();
+            $( "#side_menu_profile_after" ).show();
+            $( ".side_cont_page" ).fadeOut(200);
+            $( "#side_cont_myprofile" ).fadeIn(800);
+            $( ".triangle" ).css({'left':'47.5%'});
+            now_page = "my_profile";
+        }
     }
 
     function headsUp() {
-        $( "#sidebar_headsup" ).addClass("active");
-        $( "#sidebar_profile" ).removeClass("active");
-        $( "#sidebar_interested" ).removeClass("active");
-        $( ".side_menu" ).hide();
-        $( "#side_menu_profile_after" ).show();
-        $( ".side_cont_page" ).fadeOut(200);
-        $( "#side_cont_headsup" ).fadeIn(800);
-        $( ".triangle" ).css({'left':'81%'});
-        now_page = "heads_up";
+        if (now_page != "heads_up") {
+            $( "#sidebar_headsup" ).addClass("active");
+            $( "#sidebar_profile" ).removeClass("active");
+            $( "#sidebar_interested" ).removeClass("active");
+            $( ".side_menu" ).hide();
+            $( "#side_menu_profile_after" ).show();
+            $( ".side_cont_page" ).fadeOut(200);
+            $( "#side_cont_headsup" ).fadeIn(800);
+            $( ".triangle" ).css({'left':'81%'});
+            now_page = "heads_up";
+        }
     }
 
     function search() {
-        $( ".side_menu" ).hide();
-        $( "#side_menu_search" ).show();
-        $( ".side_cont_page" ).fadeOut(200);
-        $( "#side_cont_search" ).fadeIn(800);
-        now_page = "search";
+        if (now_page != "search") {
+            $( ".side_menu" ).hide();
+            $( "#side_menu_search" ).show();
+            $( ".side_cont_page" ).fadeOut(200);
+            $( "#side_cont_search" ).fadeIn(800);
+            now_page = "search";
+        }
     }
 
     function loginSuccess() {
