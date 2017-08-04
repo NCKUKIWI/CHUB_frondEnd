@@ -2,8 +2,8 @@ $(document).ready(function(){
 
     // Initialize
     
-    var now_tab = "none", now_page = "none", sidebar_open = 0, halfscreen_open = 0, login_status = 0;
-    $( ".sidebar_cont, .side_cont_page, .side_menu, .sidebar_cover, .side_halfscreen" ).hide();
+    var now_tab = "none", now_page = "none", sidebar_open = 0, halfscreen_open = 0, login_status = 0, halfscreen_finished = null;
+    $( ".sidebar_cont, .side_cont_page, .side_menu, .sidebar_cover, .side_halfscreen, #halfscreen_first_edit, #halfscreen_edit, #float_password_change" ).hide();
 
     
     // Tab Listener
@@ -22,12 +22,12 @@ $(document).ready(function(){
             else if ( now_page == "my_profile" ) {
                 myProfile();
             }
-            // else if ( now_page == "interested" ) {
-            //     interested();
-            // }
-            // else if ( now_page == "heads_up" ) {
-            //     headsUp();
-            // }
+            else if ( now_page == "interested" ) {
+                interested();
+            }
+            else if ( now_page == "heads_up" ) {
+                headsUp();
+            }
             else {
                 if ( login_status == 0 ) {
                     logIn();
@@ -126,16 +126,45 @@ $(document).ready(function(){
 
     $( "#side_btn_signup" ).click(function() {
         switchHalfscreen("open");
+        $( "#halfscreen_edit" ).hide();
+        $( "#halfscreen_first_edit" ).show();
     });
 
-    $( "#side_edit_save, #side_edit_cancel" ).click(function() {
+    $( "#side_first_edit_save, #side_edit_save" ).click(function() {
+        halfscreen_finished = 1;
         switchHalfscreen("close");
+    });
+
+    $( "#side_first_edit_cancel, #side_edit_cancel" ).click(function() {
+        switchHalfscreen("close");
+    });
+
+    $( "#side_btn_edit" ).click(function() {
+        switchHalfscreen("open");
+        $( "#halfscreen_first_edit" ).hide();
+        $( "#halfscreen_edit" ).show();
+    });
+
+    $( "#side_btn_edit" ).click(function() {
+        switchHalfscreen("open");
+        $( "#halfscreen_first_edit" ).hide();
+        $( "#halfscreen_edit" ).show();
+    });
+
+    $( "#side_edit_pw" ).click(function() {
+        $( "#float_password_change" ).fadeIn();
+        switchHalfscreen("close");
+    });
+
+    $( "#side_btn_save_pw, #close_pw" ).click(function() {
+        $( "#float_password_change" ).fadeOut();
+        switchHalfscreen("open");
     });
 
 
     // Other Listeners
     
-    $( ".sidebar_cont" ).hover(
+    $( ".sidebar_cont, .side_halfscreen" ).hover(
         function() {
             $.fn.fullpage.setAllowScrolling(false);
         }, function() {
@@ -156,7 +185,7 @@ $(document).ready(function(){
         }
         if ( command == "close" ) {
             sidebar_open = 0;
-            if ( halfscreen_open == 0 )
+            if ( halfscreen_open == 0 && halfscreen_finished == 0 )
                 switchHalfscreen("open");
             now_tab = "none";
             $( ".sidebar_cont" ).css({'right':'60px','opacity':'0'});
@@ -169,6 +198,8 @@ $(document).ready(function(){
     function switchHalfscreen( command ) {
         if ( command == "open" ) {
             halfscreen_open = 1;
+            if ( halfscreen_finished != 1 )
+                halfscreen_finished = 0;
             if ( sidebar_open == 1 )
                 switchSidebar("close");
             $( ".side_halfscreen, .halfscreen_cover" ).show();
@@ -212,22 +243,22 @@ $(document).ready(function(){
         $( "#sidebar_headsup" ).removeClass("active");
         $( "#sidebar_profile" ).removeClass("active");
         $( ".side_menu" ).hide();
-        // ...show
+        $( "#side_menu_profile_after" ).show();
         $( ".side_cont_page" ).fadeOut(200);
-        // ...fadeIn
-        $( ".triangle" ).css({'left':'13%'});
+        $( "#side_cont_interested" ).fadeIn(800);
+        $( ".triangle" ).css({'left':'14%'});
         now_page = "interested";
     }
 
     function myProfile() {
         $( "#sidebar_profile" ).addClass("active");
-        // $( "#sidebar_headsup" ).removeClass("active");
-        // $( "#sidebar_interested" ).removeClass("active");
+        $( "#sidebar_headsup" ).removeClass("active");
+        $( "#sidebar_interested" ).removeClass("active");
         $( ".side_menu" ).hide();
         $( "#side_menu_profile_after" ).show();
         $( ".side_cont_page" ).fadeOut(200);
         $( "#side_cont_myprofile" ).fadeIn(800);
-        // $( ".triangle" ).css({'left':'46%'});
+        $( ".triangle" ).css({'left':'47.5%'});
         now_page = "my_profile";
     }
 
@@ -236,10 +267,10 @@ $(document).ready(function(){
         $( "#sidebar_profile" ).removeClass("active");
         $( "#sidebar_interested" ).removeClass("active");
         $( ".side_menu" ).hide();
-        // ...show
+        $( "#side_menu_profile_after" ).show();
         $( ".side_cont_page" ).fadeOut(200);
-        // ...fadeIn
-        $( ".triangle" ).css({'left':'80%'});
+        $( "#side_cont_headsup" ).fadeIn(800);
+        $( ".triangle" ).css({'left':'81%'});
         now_page = "heads_up";
     }
 
