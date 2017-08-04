@@ -1103,6 +1103,14 @@ $trans_slow: 1s;
         width: 100%;
         top: 10px;
         height: 110px;
+        cursor: pointer;
+        transition: background $trans_mid;
+        &:hover {
+            background: rgba(0,0,0,0.1);
+        }
+        &:active {
+            background: rgba(0,0,0,0.3);
+        }
         .profile_photo {
             position: absolute;
             margin-left: 40px;
@@ -1134,6 +1142,18 @@ $trans_slow: 1s;
             font-weight: 600;
             display: inline;
             letter-spacing: 1px;
+        }
+        &.unread {
+            .strange_icon {
+                position: absolute;
+                margin-left: 155px;
+                margin-top: 60px;
+                left: 1px;
+                background: url("../img/strange_icon_on.png");
+                height: 17px;
+                width: 16px;
+                text-decoration: none;
+            }
         }
     }
 }

@@ -897,7 +897,13 @@
   display: block;
   width: 100%;
   top: 10px;
-  height: 110px; }
+  height: 110px;
+  cursor: pointer;
+  transition: background 0.5s; }
+  #side_cont_headsup .a_notification:hover {
+    background: rgba(0, 0, 0, 0.1); }
+  #side_cont_headsup .a_notification:active {
+    background: rgba(0, 0, 0, 0.3); }
   #side_cont_headsup .a_notification .profile_photo {
     position: absolute;
     margin-left: 40px;
@@ -926,6 +932,15 @@
     font-weight: 600;
     display: inline;
     letter-spacing: 1px; }
+  #side_cont_headsup .a_notification.unread .strange_icon {
+    position: absolute;
+    margin-left: 155px;
+    margin-top: 60px;
+    left: 1px;
+    background: url("../img/strange_icon_on.png");
+    height: 17px;
+    width: 16px;
+    text-decoration: none; }
 
 .profile_photo.big {
   position: relative;

@@ -49,6 +49,7 @@ $(document).ready(function(){
             switchSidebar("close");
         }
         else {
+            messenger();
             now_tab = "message";
             switchSidebar("open");
             setTimeout(function(){
@@ -67,6 +68,20 @@ $(document).ready(function(){
             switchSidebar("open");
             setTimeout(function(){
                 $( "#side_search" ).addClass("active");
+            },200);
+        }
+    });
+
+    $( "#side_panel" ).click(function() {
+        if ( now_tab == "panel" ) {
+            switchSidebar("close");
+        }
+        else {
+            // 開啟 Panel
+            now_tab = "panel";
+            switchSidebar("open");
+            setTimeout(function(){
+                $( "#side_panel" ).addClass("active");
             },200);
         }
     });
@@ -100,6 +115,14 @@ $(document).ready(function(){
 
     $( "#sidebar_headsup" ).click(function() {
         headsUp();
+    });
+
+    $( "#sidebar_messenger" ).click(function() {
+        messenger();
+    });
+
+    $( "#sidebar_dialogue" ).click(function() {
+        dialogue();
     });
 
     $( ".dropdown-content" ).click(function() {
@@ -291,6 +314,42 @@ $(document).ready(function(){
             $( ".side_cont_page" ).fadeOut(200);
             $( "#side_cont_search" ).fadeIn(800);
             now_page = "search";
+        }
+    }
+    
+    function messenger() {
+        if (now_page != "messenger") {
+            $( "#sidebar_messenger" ).addClass("active");
+            $( "#sidebar_dialogue" ).removeClass("active");
+            $( ".side_menu" ).hide();
+            $( "#side_menu_message" ).show();
+            $( ".side_cont_page" ).fadeOut(200);
+            $( "#side_cont_messenger" ).fadeIn(800);
+            if ( login_status ==  0 ) {
+                $( ".triangle" ).css({'left':'20%'});
+            }
+            else if ( login_status == 1 ) {
+                $( ".triangle" ).css({'left':'23%'});
+            }
+            now_page = "messenger";
+        }
+    }
+
+    function dialogue() {
+        if (now_page != "dialogue") {
+            $( "#sidebar_dialogue" ).addClass("active");
+            $( "#sidebar_messenger" ).removeClass("active");
+            $( ".side_menu" ).hide();
+            $( "#side_menu_message" ).show();
+            $( ".side_cont_page" ).fadeOut(200);
+            $( "#side_cont_dialogue" ).fadeIn(800);
+            if ( login_status ==  0 ) {
+                $( ".triangle" ).css({'left':'70%'});
+            }
+            else if ( login_status ==  1 ) {
+                $( ".triangle" ).css({'left':'72.5%'});
+            }
+            now_page = "dialogue";
         }
     }
 
