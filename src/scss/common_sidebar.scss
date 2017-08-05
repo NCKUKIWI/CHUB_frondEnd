@@ -23,6 +23,7 @@ $trans_slow: 1s;
         float: right;
         margin: 18px 0px;
         cursor: pointer;
+        transition: top $trans_mid;
         img {
             width: 23px;
             opacity: $opacity_active;
@@ -1145,14 +1146,7 @@ $trans_slow: 1s;
         }
         &.unread {
             .strange_icon {
-                position: absolute;
-                margin-left: 155px;
-                margin-top: 60px;
-                left: 1px;
                 background: url("../img/strange_icon_on.png");
-                height: 17px;
-                width: 16px;
-                text-decoration: none;
             }
         }
     }
@@ -1276,4 +1270,205 @@ $trans_slow: 1s;
         margin-top: 20px;
         width: 80%;
     }
+}
+
+#side_cont_messenger {
+    .a_message {
+        position: relative;
+        display: block;
+        width: 100%;
+        top: 10px;
+        height: 110px;
+        cursor: pointer;
+        transition: background $trans_mid;
+        &:hover {
+            background: rgba(0,0,0,0.1);
+        }
+        &:active {
+            background: rgba(0,0,0,0.3);
+        }
+        .profile_photo {
+            position: absolute;
+            margin-left: 40px;
+            margin-top: 15px;
+        }
+        .message_sender {
+            position: absolute;
+            margin-left: 155px;
+            margin-top: 24px;
+            font-size: 18px;
+            opacity: $opacity_hover;
+            font-weight: 600;
+            display: inline;
+            letter-spacing: 1px;
+        }
+        .message_time {
+            position: absolute;
+            right: 0;
+            margin-right: 40px;
+            margin-top: 25px;
+            font-size: 12px;
+            opacity: $opacity_hover;
+            font-weight: 600;
+            display: inline;
+            letter-spacing: 1px;
+        }
+        .message_preview {
+            position: absolute;
+            margin-left: 156px;
+            margin-top: 55px;
+            display: inline;
+            letter-spacing: 1px;
+        }
+        .strange_icon {
+            position: absolute;
+            right: 0;
+            margin-right: 40px;
+            margin-top: 60px;
+            background: url("../img/strange_icon.png");
+            height: 17px;
+            width: 16px;
+            text-decoration: none;
+        }
+        &.unread {
+            .strange_icon {
+                background: url("../img/strange_icon_on.png");
+            }
+        }
+    }
+}
+
+#side_cont_dialogue {
+    .dialogue_window {
+        height: 62vh;
+        #close_dialogue {
+            margin: 15px;
+        }
+        .dialogue_content {
+            position: relative;
+            top: 70px;
+            height: 40vh;
+            width: 90%;
+            left: 5%;
+            overflow: scroll;
+            .message_received {
+                margin: 0px;
+                display: flex;
+                align-items: center;
+                .profile_photo {
+                    margin: 0px 20px 0px 25px;
+                    width: 60px;
+                    height: auto;
+                }
+                .message_content {
+                    max-width: 44%;
+                    background: $color_light;
+                    padding: 5px 15px 5px 12px;
+                    border-radius: 5px;
+                    margin: 10px 0px;
+                }
+                &.continue {
+                    margin-top: -10px;
+                    margin-left: 108px;
+                }
+            }
+            .message_updated_time {
+                text-align: center;
+                opacity: $opacity_hover;
+                letter-spacing: 2px;
+                margin: 15px;
+            }
+            .message_sent {
+                margin: 0px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                margin-right: 40px;
+                .message_content {
+                    max-width: 44%;
+                    background: grey;
+                    padding: 5px 15px 5px 12px;
+                    border-radius: 5px;
+                    margin: 5px 0px;
+                }
+            }
+        }
+        .dialogue_input {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            .horizontal_line {
+                position: absolute;
+                top: 20px;
+                height: 2px;
+            }
+            #messege_input {
+                position: absolute;
+                margin-top: 35px;
+                height: 80px;
+                left: -8%;
+                width: 66.2%;
+                padding: 15px 120px;
+                background: transparent;
+                border: transparent;
+                color: white;
+                font-size: 14px;
+                line-height: 20px;
+            }
+            .message_input_icon {
+                position: relative;
+                float: right;
+                right: 60px;
+                top: 58px;
+                margin: -3px 8px;
+                background: url("../img/close.png");
+                height: 21px;
+                width: 21px;
+                text-decoration: none;
+                &:active {
+                    opacity: $opacity_active;
+                }
+            }
+            #icon_plus {
+                background: url("../img/icon_plus.png");
+                &:hover {
+                    background: url("../img/icon_plus_on.png");
+                }
+            }
+            #icon_archive {
+                background: url("../img/icon_archive.png");
+                &:hover {
+                    background: url("../img/icon_archive_on.png");
+                }
+            }
+            .message_input_btn {
+                position: absolute;
+                right: 62px;
+                bottom: -12.2vh;
+                margin: 0px 10px;
+                text-decoration: none;
+                font-size: 12px;
+                display: block;
+                text-align: center;
+                width: 60px;
+                margin: auto;
+                letter-spacing: 1px;
+                padding: 10px 2px;
+                background: $color_light;
+                color: white;
+                transition: opacity $trans_fast, background $trans_fast, color $trans_fast;
+                &:hover {
+                    color: $color_orange;
+                }
+                &:active {
+                    color: black;
+                    background: $color_orange;
+                }
+            }
+        }
+    }
+}
+
+#dialogue_name  {
+    cursor: default;
 }

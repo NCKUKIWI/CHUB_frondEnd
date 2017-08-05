@@ -2,8 +2,8 @@ $(document).ready(function(){
 
     // Initialize
     
-    var now_tab = "none", now_page = "none", sidebar_open = 0, halfscreen_open = 0, login_status = 0, halfscreen_finished = null;
-    $( ".sidebar_cont, .side_cont_page, .side_menu, .sidebar_cover, .side_halfscreen, #halfscreen_first_edit, #halfscreen_edit, #float_password_change" ).hide();
+    var now_tab = "none", now_page = "none", sidebar_open = 0, halfscreen_open = 0, login_status = 0, dialogue_name = null, halfscreen_finished = null;
+    $( ".sidebar_cont, .side_cont_page, .side_menu, .sidebar_cover, .side_halfscreen, #side_message, #halfscreen_first_edit, #halfscreen_edit, #float_password_change" ).hide();
 
     
     // Tab Listener
@@ -184,6 +184,20 @@ $(document).ready(function(){
         switchHalfscreen("open");
     });
 
+    $( ".a_message" ).click(function() {
+        $( "#dialogue_name" ).text("Chia Hao Liao");
+        $( "#dialogue_name" ).css("cursor","pointer");
+        dialogue_name = "Chia Hao Liao";
+        dialogue();
+    });
+
+    $( "#close_dialogue" ).click(function() {
+        $( "#dialogue_name" ).text("Dialogue");
+        $( "#dialogue_name" ).css("cursor","default");
+        dialogue_name = null;
+        messenger();
+    });
+
 
     // Other Listeners
     
@@ -336,7 +350,7 @@ $(document).ready(function(){
     }
 
     function dialogue() {
-        if (now_page != "dialogue") {
+        if ( now_page != "dialogue" && dialogue_name != null) {
             $( "#sidebar_dialogue" ).addClass("active");
             $( "#sidebar_messenger" ).removeClass("active");
             $( ".side_menu" ).hide();
@@ -355,12 +369,14 @@ $(document).ready(function(){
 
     function loginSuccess() {
         $( ".sidebar_cont" ).addClass("widewidth");
+        $( "#side_message" ).show();
         login_status = 1;
         myProfile();
     }
 
     function logoutSuccess() {
         $( ".sidebar_cont" ).removeClass("widewidth");
+        $( "#side_message" ).hide();
         login_status = 0;
         logIn();
     }

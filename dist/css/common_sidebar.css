@@ -8,7 +8,8 @@
   .right_sidebar .side_icon {
     float: right;
     margin: 18px 0px;
-    cursor: pointer; }
+    cursor: pointer;
+    transition: top 0.5s; }
     .right_sidebar .side_icon img {
       width: 23px;
       opacity: 0.4;
@@ -933,14 +934,7 @@
     display: inline;
     letter-spacing: 1px; }
   #side_cont_headsup .a_notification.unread .strange_icon {
-    position: absolute;
-    margin-left: 155px;
-    margin-top: 60px;
-    left: 1px;
-    background: url("../img/strange_icon_on.png");
-    height: 17px;
-    width: 16px;
-    text-decoration: none; }
+    background: url("../img/strange_icon_on.png"); }
 
 .profile_photo.big {
   position: relative;
@@ -1045,3 +1039,166 @@
     left: 10%;
     margin-top: 20px;
     width: 80%; }
+
+#side_cont_messenger .a_message {
+  position: relative;
+  display: block;
+  width: 100%;
+  top: 10px;
+  height: 110px;
+  cursor: pointer;
+  transition: background 0.5s; }
+  #side_cont_messenger .a_message:hover {
+    background: rgba(0, 0, 0, 0.1); }
+  #side_cont_messenger .a_message:active {
+    background: rgba(0, 0, 0, 0.3); }
+  #side_cont_messenger .a_message .profile_photo {
+    position: absolute;
+    margin-left: 40px;
+    margin-top: 15px; }
+  #side_cont_messenger .a_message .message_sender {
+    position: absolute;
+    margin-left: 155px;
+    margin-top: 24px;
+    font-size: 18px;
+    opacity: 0.7;
+    font-weight: 600;
+    display: inline;
+    letter-spacing: 1px; }
+  #side_cont_messenger .a_message .message_time {
+    position: absolute;
+    right: 0;
+    margin-right: 40px;
+    margin-top: 25px;
+    font-size: 12px;
+    opacity: 0.7;
+    font-weight: 600;
+    display: inline;
+    letter-spacing: 1px; }
+  #side_cont_messenger .a_message .message_preview {
+    position: absolute;
+    margin-left: 156px;
+    margin-top: 55px;
+    display: inline;
+    letter-spacing: 1px; }
+  #side_cont_messenger .a_message .strange_icon {
+    position: absolute;
+    right: 0;
+    margin-right: 40px;
+    margin-top: 60px;
+    background: url("../img/strange_icon.png");
+    height: 17px;
+    width: 16px;
+    text-decoration: none; }
+  #side_cont_messenger .a_message.unread .strange_icon {
+    background: url("../img/strange_icon_on.png"); }
+
+#side_cont_dialogue .dialogue_window {
+  height: 62vh; }
+  #side_cont_dialogue .dialogue_window #close_dialogue {
+    margin: 15px; }
+  #side_cont_dialogue .dialogue_window .dialogue_content {
+    position: relative;
+    top: 70px;
+    height: 40vh;
+    width: 90%;
+    left: 5%;
+    overflow: scroll; }
+    #side_cont_dialogue .dialogue_window .dialogue_content .message_received {
+      margin: 0px;
+      display: flex;
+      align-items: center; }
+      #side_cont_dialogue .dialogue_window .dialogue_content .message_received .profile_photo {
+        margin: 0px 20px 0px 25px;
+        width: 60px;
+        height: auto; }
+      #side_cont_dialogue .dialogue_window .dialogue_content .message_received .message_content {
+        max-width: 44%;
+        background: #666666;
+        padding: 5px 15px 5px 12px;
+        border-radius: 5px;
+        margin: 10px 0px; }
+      #side_cont_dialogue .dialogue_window .dialogue_content .message_received.continue {
+        margin-top: -10px;
+        margin-left: 108px; }
+    #side_cont_dialogue .dialogue_window .dialogue_content .message_updated_time {
+      text-align: center;
+      opacity: 0.7;
+      letter-spacing: 2px;
+      margin: 15px; }
+    #side_cont_dialogue .dialogue_window .dialogue_content .message_sent {
+      margin: 0px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-right: 40px; }
+      #side_cont_dialogue .dialogue_window .dialogue_content .message_sent .message_content {
+        max-width: 44%;
+        background: grey;
+        padding: 5px 15px 5px 12px;
+        border-radius: 5px;
+        margin: 5px 0px; }
+  #side_cont_dialogue .dialogue_window .dialogue_input {
+    position: absolute;
+    width: 100%;
+    bottom: 0; }
+    #side_cont_dialogue .dialogue_window .dialogue_input .horizontal_line {
+      position: absolute;
+      top: 20px;
+      height: 2px; }
+    #side_cont_dialogue .dialogue_window .dialogue_input #messege_input {
+      position: absolute;
+      margin-top: 35px;
+      height: 80px;
+      left: -8%;
+      width: 66.2%;
+      padding: 15px 120px;
+      background: transparent;
+      border: transparent;
+      color: white;
+      font-size: 14px;
+      line-height: 20px; }
+    #side_cont_dialogue .dialogue_window .dialogue_input .message_input_icon {
+      position: relative;
+      float: right;
+      right: 60px;
+      top: 58px;
+      margin: -3px 8px;
+      background: url("../img/close.png");
+      height: 21px;
+      width: 21px;
+      text-decoration: none; }
+      #side_cont_dialogue .dialogue_window .dialogue_input .message_input_icon:active {
+        opacity: 0.4; }
+    #side_cont_dialogue .dialogue_window .dialogue_input #icon_plus {
+      background: url("../img/icon_plus.png"); }
+      #side_cont_dialogue .dialogue_window .dialogue_input #icon_plus:hover {
+        background: url("../img/icon_plus_on.png"); }
+    #side_cont_dialogue .dialogue_window .dialogue_input #icon_archive {
+      background: url("../img/icon_archive.png"); }
+      #side_cont_dialogue .dialogue_window .dialogue_input #icon_archive:hover {
+        background: url("../img/icon_archive_on.png"); }
+    #side_cont_dialogue .dialogue_window .dialogue_input .message_input_btn {
+      position: absolute;
+      right: 62px;
+      bottom: -12.2vh;
+      margin: 0px 10px;
+      text-decoration: none;
+      font-size: 12px;
+      display: block;
+      text-align: center;
+      width: 60px;
+      margin: auto;
+      letter-spacing: 1px;
+      padding: 10px 2px;
+      background: #666666;
+      color: white;
+      transition: opacity 0.2s, background 0.2s, color 0.2s; }
+      #side_cont_dialogue .dialogue_window .dialogue_input .message_input_btn:hover {
+        color: #ed9027; }
+      #side_cont_dialogue .dialogue_window .dialogue_input .message_input_btn:active {
+        color: black;
+        background: #ed9027; }
+
+#dialogue_name {
+  cursor: default; }
