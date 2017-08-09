@@ -3,7 +3,6 @@ $(document).ready(function(){
     // Initialize
     
     var now_tab = "none", now_page = "none", sidebar_open = 0, halfscreen_open = 0, login_status = 0, dialogue_name = null, halfscreen_finished = null;
-    $( ".sidebar_cont, .side_cont_page, .side_menu, .sidebar_cover, .side_halfscreen, #side_message, #halfscreen_first_edit, #halfscreen_edit, #float_password_change" ).hide();
 
     
     // Tab Listener
