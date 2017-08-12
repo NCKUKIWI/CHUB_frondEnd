@@ -5,6 +5,8 @@ $bottom_url: url('../img/bg_pic.png');
 $cover_url: url('../img/bg_cover.png');
 $color_green: #5fb8a4;
 $color_orange: #ed9027;
+$color_dark: #4d4d4d;
+$color_light: #666666;
 $opacity_hover: 0.7;
 $opacity_active: 0.4;
 $trans_fast: 0.2s;
@@ -59,27 +61,54 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
-#project_list {
+#activity_list {
     position: absolute;
     z-index: 100;
     left: 0;
     top: 0.5vh;
-    width: 80vw;
+    width: 90vw;
     height: 99vh;
-    overflow: hidden;
-    .project_item {
-        position: relative;
-        height: 50vh;
-        width: 20vw;
-        margin: -1px -2px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    .row {
+        width: 15vw;
+        margin-left: 2vw;
         display: inline-block;
+    }
+    #row_1 {
+        position: absolute;
+        left: 6vw;
+        top: 5vh;
+    }
+    #row_2 {
+        position: absolute;
+        left: 24vw;
+        top: 22vh;
+    }
+    #row_3 {
+        position: absolute;
+        left: 42vw;
+        top: 12vh;
+    }
+    #row_4 {
+        position: absolute;
+        left: 60vw;
+        top: 42vh;
+    }
+    .activity_item {
+        position: relative;
+        width: 100%;
+        height: 35vh;
         overflow: hidden;
         cursor: pointer;
         text-align: center;
+        margin: 0vh 0vh 6vh 0vh;
+        transition: $trans_mid;
         .preview_pic {
             position: relative;
-            min-height: 50vh;
-            min-width: 20vw;
+            vertical-align : middle;
+            min-height: 100%;
+            min-width: 100%;
             -webkit-filter: brightness(40%);
             filter: brightness(40%);
             transition: brightness $trans_mid;
@@ -89,7 +118,7 @@ body::-webkit-scrollbar-thumb {
             z-index: 20;
             left: 0;
             right: 0;
-            bottom: 24vh;
+            bottom: 14vh;
             margin: auto;
             width: 8vh;
             height: 8vh;
@@ -108,7 +137,7 @@ body::-webkit-scrollbar-thumb {
             z-index: 30;
             left: 0;
             right: 0;
-            bottom: 25vh;
+            bottom: 15vh;
             margin: auto;
             color: $color_orange;
             font-size: 20px;
@@ -132,7 +161,7 @@ body::-webkit-scrollbar-thumb {
             z-index: 30;
             left: 0;
             right: 0;
-            bottom: 20vh;
+            bottom: 10vh;
             margin: auto;
             letter-spacing: 2px;
             transition: opacity $trans_mid;
@@ -161,12 +190,16 @@ body::-webkit-scrollbar-thumb {
             transition: opacity $trans_mid;
         }
         &:hover {
+            z-index: 100;
+            height: 42vh;
+            width: 18vw;
+            transform: translate( -1.5vw, -2vh );
             .preview_pic {
                 -webkit-filter: brightness(100%);
                 filter: brightness(100%);
             }
             .preview_more {
-                bottom: 22vh;
+                bottom: 12vh;
                 height: 10vh;
                 width: 10vh;
                 opacity: 0.7;
@@ -190,7 +223,8 @@ body::-webkit-scrollbar-thumb {
 
 #preview_control {
     position: absolute;
-    top: 50vh;
+    z-index: 200;
+    top: 20vh;
     left: 80vw;
     margin-left: 50px;
     margin-top: -40px;
@@ -230,33 +264,6 @@ body::-webkit-scrollbar-thumb {
         }
         &:active {
             opacity: $opacity_active;
-        }
-    }
-    .list_go {
-        position: relative;
-        z-index: 20;
-        height: 30px;
-        width: 70px;
-        top: 10vh;
-        display: block;
-        background-size: 95%;
-        background-repeat: no-repeat;
-        transition: opacity $trans_mid;
-        cursor: pointer;
-        &:active {
-            opacity: $opacity_active;
-        }
-    }
-    #go_up {
-        background-image: url('../img/go_up.png');
-        &:hover {
-            background-image: url('../img/go_up_active.png');
-        }
-    }
-    #go_down {
-        background-image: url('../img/go_down.png');
-        &:hover {
-            background-image: url('../img/go_down_active.png');
         }
     }
 }

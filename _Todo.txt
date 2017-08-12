@@ -7,6 +7,8 @@
 
 【工作】
     NOW：
+        github 上的 main_round_pic css 從 people,project 搬到 common 裡面
+        github 上面 projects 通通改成 project
         People 圖片限制
         側邊欄製作（Sidebar.ai）
         sidebar 上下部滾動會跑掉 - 把 project 不斷增加之後即會看到
@@ -18,14 +20,14 @@
         Menu 的 projects 改成 project
         各螢幕尺寸測試
         People 左右對照問題
-        Major, Skill 改成下拉式
+        Major, Skill 改成下拉式(三行下拉)
         Windows Scrollbar 確認有沒有問題
         尚未填寫資料那邊 UX 不好
         Caps Lock 警告
         中英文名字問題
         Project的線怪怪的
         People的框框
-        
+        學校填寫資料，設定可以自動完成
     FUTURE：
         背景（特效製作？不好，建議全部改成靜態的）
         盡量多加註解

@@ -5,6 +5,8 @@ $bottom_url: url('../img/bg_pic.png');
 $cover_url: url('../img/bg_cover.png');
 $color_green: #5fb8a4;
 $color_orange: #ed9027;
+$color_dark: #4d4d4d;
+$color_light: #666666;
 $opacity_hover: 0.7;
 $opacity_active: 0.4;
 $trans_fast: 0.2s;
@@ -30,6 +32,8 @@ p {
     letter-spacing: 0px;
 }
 
+// 添加 scrollbar
+
 .with_scroll {
     &::-webkit-scrollbar-track {
         -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
@@ -43,4 +47,43 @@ p {
         border-radius: 10px;
         background: $color_orange;
     }        
+}
+
+// 四大頁面的圓圈圖
+
+.main_round_pic {
+    position: absolute;
+    left: 48vw;
+    top: 20vh;
+    width: 60vh;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+// 按鈕們
+
+.botton {
+    &.tiny {
+        position: relative;
+        display: inline;
+        cursor: pointer;
+        z-index: 10;
+        font-size: 12px;
+        font-weight: 100;
+        letter-spacing: 1px;
+        color: $color_orange;
+        top: -1px;
+        padding: 0px 5px;
+        margin: 0px 5px;
+        background: $color_dark;
+        transition: $trans_fast;
+        &:hover {
+            color: black;
+            background: $color_orange;
+        }
+        &:active {
+            filter: brightness(60%);
+            -webkit-filter: brightness(60%);
+        }
+    }
 }

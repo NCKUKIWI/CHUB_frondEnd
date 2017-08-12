@@ -19,6 +19,37 @@
   .float_window #detail_left {
     position: relative;
     left: 60px; }
+    .float_window #detail_left .class_icons {
+      position: absolute; }
+      .float_window #detail_left .class_icons .float_icon {
+        position: relative;
+        z-index: 20;
+        top: 12vh;
+        width: 40px;
+        height: 75px;
+        display: block;
+        background-size: 90%;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%); }
+        .float_window #detail_left .class_icons .float_icon.culture {
+          background-image: url("../img/project_icon_culture.png"); }
+        .float_window #detail_left .class_icons .float_icon.digital {
+          background-image: url("../img/project_icon_digital.png"); }
+        .float_window #detail_left .class_icons .float_icon.social {
+          background-image: url("../img/project_icon_social.png"); }
+        .float_window #detail_left .class_icons .float_icon.now {
+          filter: grayscale(0%);
+          -webkit-filter: grayscale(0%); }
+          .float_window #detail_left .class_icons .float_icon.now:after {
+            position: relative;
+            top: 68px;
+            content: "";
+            display: block;
+            height: 2px;
+            width: 85px;
+            background: #ed9027; }
     .float_window #detail_left #detail_brief {
       position: relative;
       margin: 0px 70px;
@@ -40,9 +71,10 @@
         transition: brightness 0.5s; }
       .float_window #detail_left #detail_brief #pic_more {
         position: absolute;
-        width: 102%;
-        left: -1%;
-        bottom: 2px;
+        display: inline-block;
+        right: -1%;
+        top: -1%;
+        height: 101%;
         opacity: 0.7;
         transition: opacity 0.5s, brightness 0.5s; }
       .float_window #detail_left #detail_brief .project_name {
@@ -141,14 +173,14 @@
     overflow: hidden;
     flex-direction: row;
     align-items: center; }
-    .float_pic_window #view_all_pic .project_view_pic {
+    .float_pic_window #view_all_pic .gallery_view_pic {
       position: relative;
       width: 50%;
       top: 0px;
       opacity: 0.3;
       margin: 30px;
       transition: opacity 0.5s, width 0.5s, top 0.5s; }
-      .float_pic_window #view_all_pic .project_view_pic.center {
+      .float_pic_window #view_all_pic .gallery_view_pic.center {
         width: 55%;
         top: 0;
         opacity: 1; }
@@ -179,6 +211,8 @@
     transition: opacity 0.2s; }
     .bottom_icons .round_icon.join {
       background-image: url("../img/round_icon_join.png"); }
+    .bottom_icons .round_icon.interest {
+      background-image: url("../img/round_icon_interest.png"); }
     .bottom_icons .round_icon.share {
       background-image: url("../img/round_icon_share.png"); }
     .bottom_icons .round_icon.text {
