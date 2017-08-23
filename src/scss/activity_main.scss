@@ -137,7 +137,7 @@ body::-webkit-scrollbar-thumb {
             z-index: 30;
             left: 0;
             right: 0;
-            bottom: 15vh;
+            bottom: 16vh;
             margin: auto;
             color: $color_orange;
             font-size: 20px;
@@ -161,8 +161,19 @@ body::-webkit-scrollbar-thumb {
             z-index: 30;
             left: 0;
             right: 0;
-            bottom: 10vh;
+            bottom: 11vh;
             margin: auto;
+            letter-spacing: 2px;
+            transition: opacity $trans_mid;
+        }
+        .preview_date {
+            position: absolute;
+            z-index: 30;
+            left: 0;
+            right: 0;
+            bottom: 8.5vh;
+            margin: auto;
+            opacity: $opacity_hover;
             letter-spacing: 2px;
             transition: opacity $trans_mid;
         }
@@ -204,7 +215,7 @@ body::-webkit-scrollbar-thumb {
                 width: 10vh;
                 opacity: 0.7;
             }
-            .preview_title, .preview_class, .icon {
+            .preview_title, .preview_class, .preview_date, .icon {
                 opacity: 0;
             }
         }
