@@ -76,10 +76,28 @@ body::-webkit-scrollbar-thumb {
         overflow: hidden;
         cursor: pointer;
         text-align: center;
+        .auto_adjust {
+            height: 50vh;
+            width: 20vw;
+            background: grey;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            &.fat {
+                img {
+                    height: 100%;
+                    width: auto;
+                }
+            }
+            &.tall {
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
         .preview_pic {
-            position: relative;
-            min-height: 50vh;
-            min-width: 20vw;
             -webkit-filter: brightness(40%);
             filter: brightness(40%);
             transition: brightness $trans_mid;

@@ -11,6 +11,7 @@ $(document).ready(function(){
     $( ".float_pic_window" ).hide();
     $( "#left_project" ).addClass("item_now");
     view_pic_total = 5;
+    autoAdjust( $(".auto_adjust") );
     
     $( ".project_item, #close_window, .dark_mask" ).click( function() {
         float_window();
@@ -36,6 +37,7 @@ $(document).ready(function(){
             $( ".float_window" ).show();
             $( "#fullpage, .cover" ).animate({opacity: 0.1}, 100, function() {
                 window_status = 'open';
+                autoAdjustProjectInner();
                 $( '.float_window' ).animate({opacity: 1}, 500);
             });
         }
@@ -158,6 +160,34 @@ $(document).ready(function(){
         }, function() {
             $( "#left_project" ).addClass("item_now");
     });
+
+
+    // 自動調整圖片大小
+    
+    function autoAdjustProjectInner () {
+        var inner_pic_size = $("#project_pic").css("width").replace("px","") / $( "#project_pic" ).css("height").replace("px","") ;
+        var outer_div_size = 25/35 ;
+        if ( inner_pic_size > outer_div_size ) {
+            $("#project_pic").addClass("fat");
+        }
+        else {
+            $("#project_pic").addClass("tall");
+        }
+    }
+    
+    function autoAdjust( outer_div ) {
+        var inner_pic_size = outer_div.children("img").css("width").replace("px","") / outer_div.children("img").css("height").replace("px","") ;
+        var outer_div_size = outer_div.css("width").replace("px","") / outer_div.css("height").replace("px","") ;
+        if ( inner_pic_size > outer_div_size ) {
+            outer_div.addClass("fat");
+        }
+        else {
+            outer_div.addClass("tall");
+        }
+        if ( outer_div.next('.auto_adjust').length ) {
+            autoAdjust( outer_div.next('.auto_adjust') );
+        }
+    }
     
 
 });

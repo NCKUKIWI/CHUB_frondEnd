@@ -4,12 +4,16 @@ $(document).ready(function(){
 
     var now_sort = "hot", window_status = "closed", pic_window_status = "closed",
         view_scroll_now = 0, view_pic_total, view_display_now = 1, view_display_prev, view_display_next;
-        
+
 
     $( "#fullpage" ).fullpage();
     $( ".float_window" ).hide();
     $( ".float_pic_window" ).hide();
     view_pic_total = 5;
+
+    $(".auto_adjust").each (function() {
+        autoAdjust($(this));
+    });
     
     $( ".activity_item, #close_window, .dark_mask" ).click( function() {
         float_window();
@@ -139,5 +143,20 @@ $(document).ready(function(){
         else
             $( "#go_next" ).addClass("disabled");
     });
+
+
+    // 自動調整圖片大小
+    
+    function autoAdjust( outer_div ) {
+        var inner_pic_size = outer_div.children("img").css("width").replace("px","") / outer_div.children("img").css("height").replace("px","") ;
+        var outer_div_size = outer_div.css("width").replace("px","") / outer_div.css("height").replace("px","") ;
+        // alert(inner_pic_size+" , "+outer_div_size);
+        if ( inner_pic_size < outer_div_size ) {
+            outer_div.addClass("tall");
+        }
+        else if ( inner_pic_size >= outer_div_size ) {
+            outer_div.addClass("fat");
+        }
+    }
 
 });

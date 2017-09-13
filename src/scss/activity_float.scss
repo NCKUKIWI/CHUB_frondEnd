@@ -96,7 +96,7 @@ $trans_slow: 1s;
             }
             #project_pic {
                 position: relative;
-                width: 100%;
+                // width: 100%;
                 transition: brightness $trans_mid;
             }
             #pic_more {
@@ -304,5 +304,27 @@ $trans_slow: 1s;
     }
     &:active {
         opacity: $opacity_active;
+    }
+}
+
+.auto_adjust_activity_inner {
+    height: 35vh;
+    width: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: grey;
+    &.fat {
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+    &.tall {
+        img {
+            width: 100%;
+            height: auto;
+        }
     }
 }
