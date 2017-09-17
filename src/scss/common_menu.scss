@@ -87,6 +87,12 @@ $trans_slow: 1s;
     bottom: 0;
     margin: 50px 80px;
     width: 100vw;
+    #menu_only_icon {
+        position: relative;
+        width: 25px;
+        left: 10px;
+        margin-right: 40px;
+    }
     &:hover {
         .menu_icon {
             cursor: pointer;
