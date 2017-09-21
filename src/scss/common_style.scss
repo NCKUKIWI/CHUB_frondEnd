@@ -16,6 +16,7 @@ $trans_slow: 1s;
 body {
     font-family: 'Noto Sans', helvetica, Microsoft JhengHei, serif, sans-serif, monospace;
     color: white;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -46,7 +47,7 @@ p {
     &::-webkit-scrollbar-thumb {
         border-radius: 10px;
         background: $color_orange;
-    }        
+    }
 }
 
 // 四大頁面的圓圈圖
