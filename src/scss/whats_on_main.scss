@@ -257,6 +257,9 @@ body::-webkit-scrollbar-thumb {
                 left: 18vw;
                 &:hover {
                     opacity: $opacity_hover;
+                    .text, .date {
+                        opacity: 1;
+                    }
                 }
                 &:active {
                     opacity: $opacity_active;
@@ -276,6 +279,8 @@ body::-webkit-scrollbar-thumb {
                     margin-left: 2vh;
                     padding: 7px 10px;
                     background: #231815;
+                    opacity: 0;
+                    transition: $trans_mid;
                     p {
                         font-size: 12px;
                         line-height: 16px;
@@ -289,6 +294,8 @@ body::-webkit-scrollbar-thumb {
                     font-size: 12px;
                     line-height: 16px;
                     color: white;
+                    opacity: 0;
+                    transition: $trans_mid;
                 }
                 &.final {
                     &:after {
