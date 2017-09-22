@@ -12,6 +12,11 @@ $trans_fast: 0.2s;
 $trans_mid: 0.5s;
 $trans_slow: 1s;
 
+.background {
+    position: fixed;
+    z-index: -1;
+}
+
 .bottom {
     position: fixed;
     z-index: 0;

@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans");
+.background {
+  position: fixed;
+  z-index: -1; }
+
 .bottom {
   position: fixed;
   z-index: 0;
@@ -18,7 +22,6 @@
   background-size: cover; }
 
 .project_cover {
-  display: none;
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -28,7 +31,6 @@
   background-size: cover; }
 
 .sidebar_cover {
-  display: none;
   position: absolute;
   z-index: 50;
   width: 100vw;
@@ -37,7 +39,6 @@
   color: transparent; }
 
 .halfscreen_cover {
-  display: none;
   position: absolute;
   z-index: 50;
   width: 100vw;
