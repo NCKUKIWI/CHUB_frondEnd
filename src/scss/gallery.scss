@@ -1,0 +1,110 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+$bottom_url: url('../img/bg_pic.png');
+$cover_url: url('../img/bg_cover.png');
+$color_green: #5fb8a4;
+$color_orange: #ed9027;
+$opacity_hover: 0.7;
+$opacity_active: 0.4;
+$trans_fast: 0.2s;
+$trans_mid: 0.5s;
+$trans_slow: 1s;
+
+.gallery {
+    position: fixed;
+    margin: auto;
+    z-index: 90;
+    left: 0;
+    right: 0;
+    top: 15vh;
+    height: 70vh;
+    background: rgba(76,73,72,1);
+    background: -moz-linear-gradient(top, rgba(76,73,72,1) 0%, rgba(4,0,0,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(76,73,72,1)), color-stop(100%, rgba(4,0,0,1)));
+    background: -webkit-linear-gradient(top, rgba(76,73,72,1) 0%, rgba(4,0,0,1) 100%);
+    background: -o-linear-gradient(top, rgba(76,73,72,1) 0%, rgba(4,0,0,1) 100%);
+    background: -ms-linear-gradient(top, rgba(76,73,72,1) 0%, rgba(4,0,0,1) 100%);
+    background: linear-gradient(to bottom, rgba(76,73,72,1) 0%, rgba(4,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4948', endColorstr='#040000', GradientType=0 );
+}
+
+.in_swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-container {
+    height: 100%;
+    width: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: rgba(0,0,0,0.5);
+    height: 70%;
+    top: 15%;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.auto_adjust {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    &.fat {
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+    &.tall {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.close_icon {
+    position: absolute;
+    z-index: 100;
+    cursor: pointer;
+    right: 15px;
+    top: 15px;
+    background: url("../img/close.png");
+    height: 17px;
+    width: 16px;
+    text-decoration: none;
+    &:hover {
+        background: url("../img/close_on.png");
+    }
+    &:active {
+        opacity: $opacity_active;
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .gallery {
+        width: 1150px;
+    }
+}
+
+@media screen and (max-width: 1149px) {
+    .gallery {
+        width: 100vw;
+    }
+}
