@@ -1,5 +1,3 @@
-
-
 <!-- style: whats_on_main.scss, footer.scss -->
 
 <div class="section" id="whats_on_enter">
@@ -25,8 +23,8 @@
 			</div>
 		</div>
 		<div class="counter">
-            <div class="dot on"></div>
-        </div>
+			<div class="dot on"></div>
+		</div>
 		<div class="display">
 			<div class="pic_full auto_adjust not_yet">
 				<img src="img/test.jpg">
@@ -42,15 +40,19 @@
 	<div class="block" id="block_news">
 		<div class="top">
 			<div class="sort_box">
-            	<a class="sort_way hot now">HOT</a>
-            	<a class="sort_way time">TIME</a>
-        	</div>
+				<a class="sort_way hot now">HOT</a>
+				<a class="sort_way time">TIME</a>
+			</div>
 			<p class="title">News</p>
-			<div class="fake_scroll syncscroll" name="preview_news">
+			<div class="fake_scroll kill_scrollbar syncscroll" name="preview_news">
 				<div class="fake_cont"></div>
 			</div>
 		</div>
 		<div class="cont">
+			<div class="control">
+				<a class="cont_slide left">　</a>
+				<a class="cont_slide right">　</a>
+			</div>
 			<div class="round_display syncscroll" id="display_news" name="preview_news">
 				<div class="display_item">
 					<div class="pic_round auto_adjust not_yet">
@@ -97,49 +99,49 @@
 					<p class="date">2017.09.14</p>
 				</div>
 				<div class="display_item">
-						<div class="pic_round auto_adjust not_yet">
-							<img src="img/test.jpg">
-						</div>
-						<div class="text">
-							<p>成大</p>
-							<p>數位影像與設計作品</p>
-							<p>國際商展</p>
-						</div>
-						<p class="date">2017.09.14</p>
+					<div class="pic_round auto_adjust not_yet">
+						<img src="img/test.jpg">
 					</div>
-					<div class="display_item">
-						<div class="pic_round auto_adjust not_yet">
-							<img src="img/test.jpg">
-						</div>
-						<div class="text">
-							<p>成大</p>
-							<p>數位影像與設計作品</p>
-							<p>國際商展</p>
-						</div>
-						<p class="date">2017.09.14</p>
+					<div class="text">
+						<p>成大</p>
+						<p>數位影像與設計作品</p>
+						<p>國際商展</p>
 					</div>
-					<div class="display_item">
-						<div class="pic_round auto_adjust not_yet">
-							<img src="img/test.jpg">
-						</div>
-						<div class="text">
-							<p>成大</p>
-							<p>數位影像與設計作品</p>
-							<p>國際商展</p>
-						</div>
-						<p class="date">2017.09.14</p>
+					<p class="date">2017.09.14</p>
+				</div>
+				<div class="display_item">
+					<div class="pic_round auto_adjust not_yet">
+						<img src="img/test.jpg">
 					</div>
-					<div class="display_item final">
-						<div class="pic_round auto_adjust not_yet">
-							<img src="img/test.jpg">
-						</div>
-						<div class="text">
-							<p>成大</p>
-							<p>數位影像與設計作品</p>
-							<p>國際商展</p>
-						</div>
-						<p class="date">2017.09.14</p>
+					<div class="text">
+						<p>成大</p>
+						<p>數位影像與設計作品</p>
+						<p>國際商展</p>
 					</div>
+					<p class="date">2017.09.14</p>
+				</div>
+				<div class="display_item">
+					<div class="pic_round auto_adjust not_yet">
+						<img src="img/test.jpg">
+					</div>
+					<div class="text">
+						<p>成大</p>
+						<p>數位影像與設計作品</p>
+						<p>國際商展</p>
+					</div>
+					<p class="date">2017.09.14</p>
+				</div>
+				<div class="display_item final">
+					<div class="pic_round auto_adjust not_yet">
+						<img src="img/test.jpg">
+					</div>
+					<div class="text">
+						<p>成大</p>
+						<p>數位影像與設計作品</p>
+						<p>國際商展</p>
+					</div>
+					<p class="date">2017.09.14</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -274,9 +276,11 @@
 		<div class="footer_element" id="footer_about">
 			<a class="element_title">About</a>
 			<a class="element_cont">Intro</a>
-			<a class="element_cont">What's On</a>
-			<a class="element_cont">How to Join?</a>
-			<a class="element_cont">Contact Us</a>
+			<a class="element_cont">People in C-Hub</a>
+		</div>
+		<div class="footer_element" id="footer_whats_on">
+			<a class="element_title">What's On</a>
+			<a class="element_cont">News</a>
 		</div>
 		<div class="footer_element" id="footer_people">
 			<p class="element_title">People</p>
@@ -292,6 +296,9 @@
 			<p class="element_title">Project</p>
 			<a class="element_cont">Search</a>
 			<a class="element_cont">All Projects</a>
+			<a class="element_cont">文化生活</a>
+			<a class="element_cont">智慧科技與數位內容</a>
+			<a class="element_cont">創新與社會服務</a>
 		</div>
 		<div class="footer_element" id="footer_activity">
 			<p class="element_title">Activity</p>
@@ -305,11 +312,6 @@
 			<p class="element_title">Space</p>
 			<a class="element_cont">What's Available</a>
 			<a class="element_cont">Book a Date</a>
-		</div>
-		<div class="footer_element" id="footer_help">
-			<p class="element_title">Help</p>
-			<a class="element_cont">Q&A</a>
-			<a class="element_cont">Message Us</a>
 		</div>
 	</div>
 	<div class="footer_bottom">

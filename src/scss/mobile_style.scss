@@ -815,3 +815,506 @@ p, a {
     //     }
     // }    
 }
+
+
+// Group
+
+#group_view{
+    position: relative;
+    top: -5vh;
+    margin-bottom: 50px;
+    #preview_control {
+        position: relative;
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .sort_way {
+            position: relative;
+            color: #ed9027;
+            display: block;
+            height: 60px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: opacity 0.5s;
+            line-height: 10vh;
+            margin: 0 7vw 0 7vw;
+            &:after {
+                position: absolute;
+                top: 7vh;
+                left: 0;
+                content: "";
+                display: block;
+                height: 2px;
+                width: 0px;
+                background: #ed9027;
+                transition: width 0.2s;
+            }
+            &:hover {
+                opacity: $opacity_low;
+            }
+            &:active {
+                opacity: $opacity_mid;
+            }
+            &.now {
+                &:after {
+                    width: 32px;
+                }
+            }
+        }
+    }
+    #group_list {
+        position: relative;
+        .group_item {
+            position: relative;
+            display: block;
+            padding: 20px;
+            overflow: hidden;
+            margin: 30px 0px;
+            cursor: pointer;
+            text-align: center;
+            border: $color_orange 2px solid;
+            transition: $trans_mid;
+            &:hover {
+                opacity: $opacity_low;
+            }
+            &:active {
+                opacity: $opacity_mid;
+            }
+            .auto_adjust {
+                margin: auto;
+                height: 40vh;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .preview_title {
+                position: relative;
+                color: $color_orange;
+                font-size: 16px;
+                letter-spacing: 2px;
+                font-weight: 600;
+                padding: 13px;
+                &:after {
+                    position: relative;
+                    top: 10px;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    margin-bottom: 10px;
+                    content: "";
+                    display: block;
+                    height: 2px;
+                    width: 30px;
+                    background: #ed9027;
+                }
+            }
+            .preview_description {
+                line-height: 20px;
+                letter-spacing: 2px;
+                font-size: 12px;
+                font-weight: 600;
+            }
+            .preview_date {
+                line-height: 24px;
+                letter-spacing: 2px;
+                font-size: 14px;
+                font-weight: 400;
+                opacity: $opacity_low;
+            }
+        }
+    }
+}
+
+
+.view_more {
+    position: relative;
+    margin: auto;
+    margin-top: 20px;
+    width: 50px;
+    height: 50px;
+    display: block;
+    background-image: url("../img/view_more.png");
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: $trans_mid;
+    &:hover {
+        opacity: $opacity_low;
+    }
+    &:active {
+        opacity: $opacity_mid;
+    }
+}
+
+
+// Activity
+
+#activity_view{
+    position: relative;
+    top: -5vh;
+    margin-bottom: 50px;
+    #preview_control {
+        position: relative;
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .sort_way {
+            position: relative;
+            color: #ed9027;
+            display: block;
+            height: 60px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: opacity 0.5s;
+            line-height: 10vh;
+            margin: 0 7vw 0 7vw;
+            &:after {
+                position: absolute;
+                top: 7vh;
+                left: 0;
+                content: "";
+                display: block;
+                height: 2px;
+                width: 0px;
+                background: #ed9027;
+                transition: width 0.2s;
+            }
+            &:hover {
+                opacity: $opacity_low;
+            }
+            &:active {
+                opacity: $opacity_mid;
+            }
+            &.now {
+                &:after {
+                    width: 32px;
+                }
+            }
+        }
+    }
+    #activity_list {
+        position: relative;
+        .activity_item {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            margin: 30px 0px;
+            cursor: pointer;
+            text-align: center;
+            border-bottom: $color_orange 2px solid;
+            transition: $trans_mid;
+            background: rgba(0,0,0,1);
+            background: -moz-linear-gradient(top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.8) 60%, rgba(76,73,72,0.8) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0.8)), color-stop(60%, rgba(0,0,0,0.8)), color-stop(100%, rgba(76,73,72,0.8)));
+            background: -webkit-linear-gradient(top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.8) 60%, rgba(76,73,72,0.8) 100%);
+            background: -o-linear-gradient(top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.8) 60%, rgba(76,73,72,0.8) 100%);
+            background: -ms-linear-gradient(top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.8) 60%, rgba(76,73,72,0.8) 100%);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.8) 60%, rgba(76,73,72,0.8) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#4c4948', GradientType=0 );
+            &:hover {
+                opacity: $opacity_low;
+            }
+            &:active {
+                opacity: $opacity_mid;
+            }
+            .auto_adjust {
+                margin: auto;
+                height: 30vh;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            .preview_title {
+                position: relative;
+                color: $color_orange;
+                font-size: 16px;
+                letter-spacing: 2px;
+                font-weight: 600;
+                padding: 13px;
+                &:after {
+                    position: relative;
+                    top: 10px;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    margin-bottom: 10px;
+                    content: "";
+                    display: block;
+                    height: 2px;
+                    width: 30px;
+                    background: #ed9027;
+                }
+            }
+            .preview_description {
+                line-height: 20px;
+                letter-spacing: 2px;
+                font-size: 12px;
+                font-weight: 600;
+            }
+            .preview_date {
+                line-height: 24px;
+                letter-spacing: 2px;
+                font-size: 14px;
+                font-weight: 400;
+                margin-bottom: 20px;
+                opacity: $opacity_low;
+            }
+        }
+    }
+}
+
+
+// People
+
+#people_view {
+    position: relative;
+    top: -5vh;
+    left: -10vw;
+    width: 100vw;
+    margin-bottom: 50px;
+    #people_to_major {
+        position: relative;
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 10vw;
+        .to {
+            color: $color_orange;
+            margin: 10px;
+        }
+        .major {
+            padding: 8px;
+            background: rgba(0,0,0,0.6);
+        }
+    }
+    #people_list {
+        position: relative;
+        .people_item {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            cursor: pointer;
+            transition: $trans_mid;
+            &.from_left {
+                background: rgba(76,73,72,1);
+                background: -moz-linear-gradient(left, rgba(76,73,72,1) 0%, rgba(4,0,0,1) 100%);
+                background: -webkit-gradient(left top, right top, color-stop(0%, rgba(76,73,72,1)), color-stop(100%, rgba(4,0,0,1)));
+                background: -webkit-linear-gradient(left, rgba(76,73,72,1) 0%, rgba(4,0,0,1) 100%);
+                background: -o-linear-gradient(left, rgba(76,73,72,1) 0%, rgba(4,0,0,1) 100%);
+                background: -ms-linear-gradient(left, rgba(76,73,72,1) 0%, rgba(4,0,0,1) 100%);
+                background: linear-gradient(to right, rgba(76,73,72,1) 0%, rgba(4,0,0,1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4948', endColorstr='#040000', GradientType=1 );
+                .pic {
+                    float: left;
+                }
+                .text {
+                    margin-left: 35px;
+                    left: 35vw;
+                }
+                .angle {
+                    right: 65vw;
+                    top: 65%;
+                    border-width: 2vw 3vw 2vw 0;
+                    margin-right: -1px;
+                }
+            }
+            &.from_right {
+                background: rgba(4,0,0,1);
+                background: -moz-linear-gradient(left, rgba(4,0,0,1) 0%, rgba(76,73,72,1) 100%);
+                background: -webkit-gradient(left top, right top, color-stop(0%, rgba(4,0,0,1)), color-stop(100%, rgba(76,73,72,1)));
+                background: -webkit-linear-gradient(left, rgba(4,0,0,1) 0%, rgba(76,73,72,1) 100%);
+                background: -o-linear-gradient(left, rgba(4,0,0,1) 0%, rgba(76,73,72,1) 100%);
+                background: -ms-linear-gradient(left, rgba(4,0,0,1) 0%, rgba(76,73,72,1) 100%);
+                background: linear-gradient(to right, rgba(4,0,0,1) 0%, rgba(76,73,72,1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#040000', endColorstr='#4c4948', GradientType=1 );
+                .pic {
+                    float: right;
+                }
+                .text {
+                    margin-left: 35px;
+                }
+                .angle {
+                    left: 65vw;
+                    top: 35%;
+                    border-width: 2vw 3vw 2vw 0;
+                    transform: rotate(180deg);
+                    margin-left: -1px;
+                }
+            }
+            &:hover {
+                opacity: $opacity_low;
+            }
+            &:active {
+                opacity: $opacity_mid;
+            }
+            .pic {
+                width: 35vw;
+            }
+            .auto_adjust {
+                margin: auto;
+                height: 27vh;
+                width: 100%;
+            }
+            .angle {
+                position: absolute;
+                z-index: 10;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-color: transparent #343130 transparent transparent;                                
+            }
+            .text {
+                position: absolute;
+                bottom: 30px;
+            }
+            .preview_name {
+                font-size: 16px;
+                line-height: 22px;                
+                letter-spacing: 2px;
+                font-weight: 600;
+            }
+            .preview_major {
+                color: $color_orange;
+                line-height: 20px;
+                letter-spacing: 2px;
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+            .preview_skills {
+                margin-left: 2px;
+                line-height: 14px;
+                letter-spacing: 2px;
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+#sharing_btn_set {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    .sharing_btn {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        display: block;
+        background-size: 60%;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: $trans_mid;
+        &:hover {
+            opacity: $opacity_low;
+        }
+        &:active {
+            opacity: $opacity_mid;
+        }
+        &#share_fb {
+            background-image: url("../img/share_fb.png");
+        }
+        &#share_twitter {
+            background-image: url("../img/share_twitter.png");
+        }
+        &#share_ig {
+            background-image: url("../img/share_ig.png");
+        }
+        &#share_wp {
+            background-image: url("../img/share_wp.png");
+        }
+    }
+}
+
+#people_profile_photo {
+    width: 220px;
+    height: 260px;
+    margin: auto;
+}
+
+
+#bottom_share_bar {
+    position: fixed;
+    z-index: 100;
+    width: 100vw;
+    height: 70px;
+    bottom: 0;
+    left: 0;
+    background: #5F5E5E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    .bottom_btn {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        border: $color_orange 1px solid;
+        transition: $trans_mid;
+        &:hover {
+            opacity: $opacity_low;
+        }
+        &:active {
+            opacity: $opacity_mid;
+        }
+        &#bottom_join {
+            background-image: url("../img/bottom_join.png");
+        }
+        &#bottom_interest {
+            background-image: url("../img/bottom_interest.png");
+        }
+        &#bottom_share {
+            background-image: url("../img/bottom_share.png");
+        }
+        &#bottom_totop {
+            background-image: url("../img/bottom_totop.png");
+        }
+    }
+}
+
+
+#this_project_class {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    .class {
+        position: relative;
+        width: 35px;
+        height: 35px;
+        display: block;
+        padding: 4px 10px;
+        background-size: 70%;
+        background-position: top center;
+        background-repeat: no-repeat;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        &#project_class_culture {
+            background-image: url("../img/project_icon_culture.png");
+        }
+        &#project_class_digital {
+            background-image: url("../img/project_icon_digital.png");
+        }
+        &#project_class_social {
+            background-image: url("../img/project_icon_social.png");
+        }
+        &.now {
+            -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+            border-left: $color_orange 1px solid;
+        }
+    }
+}

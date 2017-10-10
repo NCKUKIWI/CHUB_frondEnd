@@ -56,3 +56,10 @@ p {
   .botton.tiny:active {
     filter: brightness(60%);
     -webkit-filter: brightness(60%); }
+
+.kill_scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0; }
+
+.kill_scrollbar::-webkit-scrollbar-thumb {
+  background: transparent; }

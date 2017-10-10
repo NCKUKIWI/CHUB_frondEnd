@@ -9,7 +9,7 @@ $(document).ready(function(){
     $(".round_display").each(function() {
         lilGalleryInit($(this));
     });
-    gotoPage("whats_on");
+    gotoPage("others");
     switchBackground("whats_on");
     galleryInit();
     

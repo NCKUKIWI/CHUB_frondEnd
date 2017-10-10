@@ -66,7 +66,7 @@ body::-webkit-scrollbar-thumb {
     z-index: 100;
     left: 0;
     top: 0.5vh;
-    width: 90vw;
+    width: 105vw;
     height: 99vh;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -252,10 +252,65 @@ body::-webkit-scrollbar-thumb {
 #preview_control {
     position: absolute;
     z-index: 200;
-    top: 20vh;
-    left: 80vw;
-    margin-left: 50px;
+    top: 30vh;
+    right: 10vw;
+    margin-right: 50px;
     margin-top: -40px;
+    #page_up {
+        position: absolute;
+        top: -15vh;
+        background: url("../img/page_up.png");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 100vh;
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: .5s;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        opacity: 0;
+        &.show {
+            opacity: 1;
+        }
+        &:hover {
+            -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+        }
+        &:active {
+            opacity: $opacity_active;
+        }
+    }
+    #page_down {
+        position: absolute;
+        bottom: -50vh;
+        background: url("../img/page_down.png");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 100vh;
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: .5s;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        opacity: 0;
+        &.show {
+            opacity: 1;
+        }
+        &:hover {
+            -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+        }
+        &:active {
+            opacity: $opacity_active;
+        }
+    }
+    
     .sort_way {
         position: relative;
         color: $color_orange;
@@ -294,4 +349,18 @@ body::-webkit-scrollbar-thumb {
             opacity: $opacity_active;
         }
     }
+}
+
+.fake_scroll {
+    position: absolute;
+    top: 25vh;
+    right: 10vw;
+    width: 100px;
+    height: 60vh;
+    overflow: scroll;
+}
+
+.fake_cont {
+    height: 200vh;
+    width: 10px;
 }

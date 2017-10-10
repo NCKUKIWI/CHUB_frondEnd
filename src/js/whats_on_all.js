@@ -1,5 +1,5 @@
 $(document).ready(function(){ 
-    // 
+    
 });
 
 $(window).on( "load", function () {
@@ -27,6 +27,15 @@ $(window).on( "load", function () {
     $( ".sort_way.time" ).click( function() {
         $(this).siblings(".sort_way").removeClass("now");
         $(this).addClass("now");
+    });
+
+    $( ".cont_slide.right" ).click( function() {
+        var move_distance = $(window).width()/4;
+        $(this).parents(".cont").children(".round_display").animate({ scrollLeft: '+=' + move_distance }, 300);
+    });
+    $( ".cont_slide.left" ).click( function() {
+        var move_distance = $(window).width()/4;
+        $(this).parents(".cont").children(".round_display").animate({ scrollLeft: '-=' + move_distance }, 300);
     });
 
     // Fullpage 相關
