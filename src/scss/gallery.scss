@@ -29,11 +29,6 @@ $trans_slow: 1s;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4948', endColorstr='#040000', GradientType=0 );
 }
 
-.in_swiper {
-    width: 100%;
-    height: 100%;
-}
-
 .swiper-container {
     height: 100%;
     width: 100%;
@@ -42,9 +37,14 @@ $trans_slow: 1s;
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: rgba(0,0,0,0.5);
+    // background: rgba(0,0,0,0.5);
     height: 70%;
     top: 15%;
+    overflow: hidden;
+    img {
+        height: 100%;
+        width: auto;
+    }
     /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
@@ -58,25 +58,6 @@ $trans_slow: 1s;
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
-}
-
-.auto_adjust {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    &.fat {
-        img {
-            height: 100%;
-            width: auto;
-        }
-    }
-    &.tall {
-        img {
-            width: 100%;
-            height: auto;
-        }
-    }
 }
 
 .close_icon {
