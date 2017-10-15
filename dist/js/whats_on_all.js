@@ -106,19 +106,6 @@ function checkifMoveable() {
     }
 }
 
-function autoAdjust( outer_div ) {
-    var inner_pic_size = outer_div.children("img").css("width").replace("px","") / outer_div.children("img").css("height").replace("px","") ;
-    var outer_div_size = outer_div.css("width").replace("px","") / outer_div.css("height").replace("px","") ;
-    if ( inner_pic_size > outer_div_size ) {
-        outer_div.addClass("fat");
-        outer_div.removeClass("not_yet");
-    }
-    else if ( inner_pic_size <= outer_div_size ) {
-        outer_div.addClass("tall");
-        outer_div.removeClass("not_yet");
-    }
-}
-
 function animationPlay( start_img ) {        
     var next_img = start_img.next(".invisible");
     if ( next_img.length ) {
