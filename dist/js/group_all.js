@@ -15,7 +15,6 @@ $(document).ready(function(){
     });
 });
 
-
 $(window).on('load',function(){
 
     // Initialize
@@ -23,19 +22,19 @@ $(window).on('load',function(){
     var now_sort = "hot", window_status = "closed", 
         view_scroll_now = 0, view_pic_total, view_display_now = 1, view_display_prev, view_display_next;
 
-
     $( "#fullpage" ).fullpage();
     $( ".float_window" ).hide();
     view_pic_total = 5;
-
-    $(".not_yet").each(function() {
-        autoAdjust($(this));
-    });
     
     $( ".activity_item, #close_window, .dark_mask" ).click( function() {
         float_window();
     });
 
+    float_window();
+
+    $(".not_yet").each(function() {
+        autoAdjust($(this));
+    });
     
     // Activity 的顯示控制
 

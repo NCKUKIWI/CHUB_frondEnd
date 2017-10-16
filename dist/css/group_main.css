@@ -34,16 +34,17 @@
   left: 0;
   right: 0;
   top: 5vh;
-  height: 54vh; }
+  height: 60vh; }
   #group_list .swiper-container {
     height: 100%;
     width: 100%; }
   #group_list .swiper-slide {
     text-align: center;
     font-size: 18px;
-    top: 8vh;
-    height: 44vh;
-    width: 32vh;
+    top: 18vh;
+    height: 35vh;
+    width: 28vh;
+    margin: 1vh;
     opacity: 0.6;
     overflow: hidden;
     border: #ed9027 1px solid;
@@ -67,8 +68,8 @@
     #group_list .swiper-slide img {
       transition: 0.5s; }
     #group_list .swiper-slide:hover {
-      height: 52vh;
-      top: 0%;
+      height: 48vh;
+      top: 6vh;
       opacity: 1; }
       #group_list .swiper-slide:hover .preview_more {
         opacity: 1; }
@@ -78,12 +79,15 @@
       background: rgba(0, 0, 0, 0.1); }
       #group_list .swiper-slide:active img {
         opacity: 0.9; }
-  #group_list .auto_adjust {
+      #group_list .swiper-slide:active .preview_more {
+        background-color: #ed9027; }
+  #group_list .preview_pic {
     position: absolute;
     top: 0;
-    height: 28vh;
-    width: 30vh;
-    margin-top: 1vh;
+    height: 24vh;
+    width: 26vh;
+    margin-top: 1vh; }
+  #group_list .auto_adjust {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,7 +103,7 @@
     z-index: 20;
     left: 0;
     right: 0;
-    top: 33vh;
+    top: 30vh;
     margin: auto;
     width: 6vh;
     height: 6vh;
@@ -111,7 +115,7 @@
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 100vh;
-    transition: 1s; }
+    transition: opacity 1s, background-color 0.5s; }
   #group_list .preview_title {
     position: absolute;
     display: block;
@@ -147,72 +151,79 @@
     bottom: 2vh;
     letter-spacing: 2px; }
 
+.page_title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 24px;
+  margin-left: 8vw;
+  margin-top: 18vh;
+  letter-spacing: 3px;
+  font-weight: bold; }
+
 #preview_control {
   position: absolute;
   z-index: 0;
   top: 0;
-  right: 0;
+  left: 0;
   height: 100vh;
-  width: 100vh; }
+  width: 100vw; }
   #preview_control .sort_box {
-    z-index: -1; }
+    position: absolute;
+    left: 8vw;
+    margin-left: 180px;
+    top: 18vh;
+    margin-top: 6px; }
     #preview_control .sort_box .sort_way {
       position: relative;
       color: #ed9027;
       display: block;
-      height: 60px;
+      height: 40px;
+      font-size: 12px;
       letter-spacing: 2px;
       cursor: pointer;
       transition: opacity 0.5s; }
       #preview_control .sort_box .sort_way:after {
         position: absolute;
-        top: 24px;
+        top: 20px;
         left: 0;
         content: "";
         display: block;
         height: 2px;
-        width: 16px;
+        width: 0px;
         background: #ed9027;
         transition: width 0.2s; }
       #preview_control .sort_box .sort_way:hover {
         opacity: 0.7; }
       #preview_control .sort_box .sort_way.now:after {
-        position: absolute;
-        top: 24px;
-        left: 0;
-        content: "";
-        display: block;
-        height: 2px;
-        width: 32px;
-        background: #ed9027; }
+        width: 18px; }
       #preview_control .sort_box .sort_way:active {
         opacity: 0.4; }
   #preview_control .go_box {
     position: absolute;
-    z-index: -1;
-    height: 3vw;
-    width: 40vw;
-    display: block;
-    left: 0;
-    bottom: 9vh; }
+    left: 8vw;
+    bottom: 15vh;
+    width: 200px; }
     #preview_control .go_box .go_to {
       position: relative;
       display: inline-block;
-      height: 3vw;
-      width: 15vw;
+      height: 15px;
+      width: 85px;
       display: block;
       background-size: 95%;
       background-repeat: no-repeat;
       cursor: pointer; }
       #preview_control .go_box .go_to.prev {
         position: absolute;
+        top: 0;
         left: 0;
-        background-image: url("../img/go_up.png"); }
+        background-image: url("../img/go_prev.png"); }
         #preview_control .go_box .go_to.prev:hover {
-          background-image: url("../img/go_up_active.png"); }
+          background-image: url("../img/go_prev_active.png"); }
       #preview_control .go_box .go_to.next {
         position: absolute;
+        top: 0;
         right: 0;
-        background-image: url("../img/go_down.png"); }
+        background-image: url("../img/go_next.png"); }
         #preview_control .go_box .go_to.next:hover {
-          background-image: url("../img/go_down_active.png"); }
+          background-image: url("../img/go_next_active.png"); }
