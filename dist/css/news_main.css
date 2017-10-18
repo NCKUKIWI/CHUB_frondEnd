@@ -226,11 +226,14 @@
 #all_news .right {
   position: relative;
   float: left;
-  margin-top: 13.5vh;
-  margin-left: 10vw;
+  top: 13.5vh;
+  left: 10vw;
   width: 15vw;
   height: 100vh;
   overflow: hidden; }
+  #all_news .right.fixed {
+    position: fixed;
+    left: 65vw; }
   #all_news .right p {
     position: relative;
     font-size: 12px;
@@ -365,3 +368,10 @@
       #all_news .right .archive .month:active {
         filter: brightness(60%);
         -webkit-filter: brightness(60%); }
+
+#anchor_point {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  background: yellow;
+  top: 10vh; }

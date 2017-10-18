@@ -37,15 +37,21 @@ $(window).on( "load", function () {
         $(this).parents(".cont").children(".round_display").animate({ scrollLeft: '-=' + move_distance }, 300);
     });
 
-    // Fullpage 相關
     // $( "#fullpage" ).fullpage();
-    // $( ".no_autoscroll" ).hover(
-    //     function() {
-    //         $.fn.fullpage.setAutoScrolling(false);
-    //     }, function() {
-    //         $.fn.fullpage.setAutoScrolling(true);
-    //     }
-    // );
+
+    var anchor_point = $("#anchor_point").offset().top;
+
+    $(window).scroll(function (event) {        
+        var scroll = $(window).scrollTop();
+        if ( scroll > anchor_point ) {
+            if ( $("#news_right_bar").hasClass("right") ) {
+                $("#news_right_bar").addClass("fixed");                
+            }
+        }
+        else {
+            $("#news_right_bar").removeClass("fixed");
+        }
+    });
 
 });
 
